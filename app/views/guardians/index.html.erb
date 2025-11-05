@@ -1,26 +1,55 @@
-<h1>List of Guardians</h1>
+<h1 class="text-center bi bi-people-fill"> GUARDIANS </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Contact Number</th>
-      <th>Number of Students</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @guardians.each do |guardian| %>
-      <tr>
-        <td><%= guardian.name %></td>
-        <td><%= guardian.email_address %></td>
-        <td><%= guardian.contact_number %></td>
-        <td><%= guardian.number_of_students %></td>
-        <td><%= link_to "Show this guardian", guardian %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="text-end mb-3">
+      <%= link_to " New Guardian", new_guardian_path, class: "bi bi-person-add btn-n btn-mint btn-new" %>
+    </div>
 
-<%= link_to "New guardian", new_guardian_path %>
+    <style>
+      .actions-cell {
+        display: flex;
+        gap: 8px; 
+        justify-content: center; 
+        align-items: center;
+      }
+
+      .actions-cell .btn-n {
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+    <table class="n-table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>CONTACT NUMBER</th>
+          <th>NUMBER OF STUDENTS</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @guardians.each do |guardian| %>
+          <tr>
+            <td><%= guardian.name %></td>
+            <td><%= guardian.email_address %></td>
+            <td><%= guardian.contact_number %></td>
+            <td><%= guardian.number_of_students %></td>
+
+            <td class="actions-cell">
+              <%= link_to "Show", guardian, class: "btn-n btn-sky" %>
+              <%= link_to "Edit", edit_guardian_path(guardian), class: "btn-n btn-peach" %>
+              <%= link_to "Delete", guardian, class: "btn-n btn-pink", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
