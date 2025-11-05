@@ -1,7 +1,7 @@
 <div class="n-wrapper">
  <div class="student-card">
     <div class="card-header-solid">
-      <h2 class="mb-0"><%= student.new_record? ? "ADDING NEW STUDENT" : "EDITING STUDENT" %></h5>
+      <h2 class="mb-0"><%= student.new_record? ? "New Student" : "Edit Student" %></h5>
     </div>
 
     <div class="card-body">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="text-end mt-4">
-          <%= form.submit student.new_record? ? "Create Student" : "Update Student", class: "btn-n btn-peach" %>
+          <%= form.submit student.new_record? ? "Save" : "Update", class: "btn-n btn-peach" %>
         </div>
       <% end %>
     </div>
