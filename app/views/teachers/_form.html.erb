@@ -1,42 +1,40 @@
-<%= form_with(model: teacher) do |form| %>
-  <% if teacher.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
-
-      <ul>
-        <% teacher.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="n-wrapper">
+ <div class="form-card">
+    <div class="card-header-solid">
+      <h2 class="mb-0"><%= teacher.new_record? ? "New Teacher" : "Edit Teacher" %></h5>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="card-body">
+      <%= form_with(model: teacher, local: true) do |form| %>
+        <div class="mb-3">
+          <%= form.label :name, "Name" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Enter teacher name" %>
+        </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :email, "Email" %>
+          <%= form.text_field :email, class: "form-control", placeholder: "Enter email" %>
+        </div>
 
-  <div>
-    <%= form.label :specialization, style: "display: block" %>
-    <%= form.text_field :specialization %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :specialization, "Specialization" %>
+          <%= form.text_field :specialization, class: "form-control", placeholder: "Enter specialization" %>
+        </div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :status, "Status" %>
+          <%= form.text_field :status, class: "form-control", placeholder: "Enter status" %>
+        </div>
 
- <div>
-    <%= form.label :department_id, style: "display: block" %>
-    <%= form.collection_select :department_id, Department.all, :id, :name, prompt: "Select a department" %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :department_id, "Department" %>
+          <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Select a department" }, class: "form-select" %>
+        </div>
 
-  <div>
-    <%= form.submit %>
+        <div class="text-end mt-4">
+          <%= form.submit teacher.new_record? ? "Save" : "Update", class: "btn-n btn-peach" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
