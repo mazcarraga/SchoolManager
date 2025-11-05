@@ -1,42 +1,60 @@
-<%= form_with(model: staff) do |form| %>
-  <% if staff.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
-
-      <ul>
-        <% staff.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="n-wrapper">
+  <div class="student-card">
+    <div class="card-header-solid">
+      <h2 class="mb-0"><%= staff.new_record? ? "ADDING NEW STAFF" : "EDITING STAFF" %></h2>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <div class="card-body">
+      <%= form_with(model: staff, local: true) do |f| %>
+
+        <% if staff.errors.any? %>
+          <div class="alert alert-danger">
+            <h5><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h5>
+            <ul>
+              <% staff.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name, "Name", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email, "Email", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :monthly_salary, "Monthly Salary", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.number_field :monthly_salary, step: 0.01, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :status, "Status", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.text_field :status, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :department_id, "Department", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.collection_select :department_id, Department.all, :id, :name, { prompt: "Select Department" }, class: "form-select" %>
+        </div>
+
+        <div class="actions" style="margin-top: 20px;">
+          <%= f.submit class: "btn-n btn-mint" %>
+        </div>
+
+      <% end %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
 
-  <div>
-    <%= form.label :monthly_salary, style: "display: block" %>
-    <%= form.text_field :monthly_salary %>
-  </div>
+</div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
-  </div>
 
- <div>
-    <%= form.label :department_id, style: "display: block" %>
-    <%= form.collection_select :department_id, Department.all, :id, :name, prompt: "Select a department" %>
-  </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+
+
