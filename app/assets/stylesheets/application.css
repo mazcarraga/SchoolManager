@@ -8,3 +8,251 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* GLOBAL COLOR VARIABLES */
+:root {
+  --snow:  #ECF0F3;   /* main background / base */
+  --ash:   #DEDCE1;   /* soft shadow color */
+  --pink:  #E3B1C0;
+  --sky:   #A4CCE6;
+  --peach: #F7D9B3;
+  --mint:  #9FDECE;
+  --navy:  #4A70A9;   
+  --grey:  #d4d7dd;
+}
+
+/* GLOBAL BASE STYLING */
+body {
+  background: var(--snow);
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+.n-wrapper {
+  margin: auto;
+  padding: 30px;
+}
+
+/* CONTAINERS / CARDS DESIGN */
+.n-card {
+  background: var(--snow);
+  border-radius: 16px;
+  padding: 1.5rem 1.5rem;
+  box-shadow:
+    6px 6px 12px rgba(0,0,0,0.08),
+    -6px -6px 12px rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+}
+
+/* TABLE DESIGN */
+.n-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.n-table thead th {
+  background: var(--snow);
+  color: var(--navy);
+  font-weight: 1000;
+  /* padding: 10px; */
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.07),
+    -5px -5px 10px rgba(255,255,255,0.9);
+  /* border-radius: 12px; */
+   transition: 0.25s ease-in-out;
+}
+
+.n-table tbody tr {
+  background: var(--snow);
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.07),
+    -5px -5px 10px rgba(255,255,255,0.9);
+  border-radius: 12px;
+  transition: 0.25s ease-in-out;
+}
+
+.n-table tbody tr:hover {
+  transform: translateY(-1px);
+}
+
+.n-table td {
+  padding: 14px;
+  vertical-align: middle;
+}
+
+.n-table tbody td:nth-child(1),
+.n-table tbody td:nth-child(3),
+.n-table tbody td:nth-child(4) {
+  text-align: left;
+}
+
+.n-table tbody td:nth-child(2),
+.n-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+.n-table thead th:nth-child(1) { width: 24%; }
+.n-table thead th:nth-child(2) { width: 12%; }
+.n-table thead th:nth-child(3) { width: 20%; }
+.n-table thead th:nth-child(4) { width: 24%; }
+.n-table thead th:nth-child(5) { width: 20%; }
+
+.actions-cell a {
+  margin: 0 4px;
+}
+
+
+/* BUTTONS DESIGN */
+.btn-n {
+  border-radius: 20px; 
+  border: none;
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  color: #333;
+  transition: 0.2s ease-in-out;
+  box-shadow:
+    4px 4px 8px rgba(0,0,0,0.12),
+    -4px -4px 8px rgba(255,255,255,0.9);
+}
+
+.btn-n:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    6px 6px 12px rgba(0,0,0,0.13),
+    -6px -6px 12px rgba(255,255,255,0.95);
+  filter: brightness(1.1);
+}
+
+.btn-n:active {
+  transform: translateY(0px);
+  box-shadow:
+    inset 4px 4px 8px rgba(0,0,0,0.15),
+    inset -4px -4px 8px rgba(255,255,255,0.9);
+}
+
+/* Accent button classes */
+.btn-pink  { background: var(--pink);  color: #333; }
+.btn-sky   { background: var(--sky);   color: #333; }
+.btn-peach { background: var(--peach); color: #333; }
+.btn-mint  { background: var(--mint);  color: #333; }
+.btn-grey  { background: var(--grey);  color: #333; }
+
+/* New Student button (slightly larger) */
+.btn-new {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+}
+
+/* SHOW PAGE: SUBJECT LIST TABLE */
+.n-subject-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 15px;
+}
+
+.n-subject-table thead th {
+  background: var(--snow);
+  color: var(--navy);
+  font-weight: 1000;
+  /* padding: 10px; */
+  text-align: center;
+  letter-spacing: 0.4px;
+  font-size: 1.1rem;
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.07),
+    -5px -5px 10px rgba(255,255,255,0.9);
+  transition: 0.2s ease-in-out;
+}
+
+.n-subject-table tbody tr {
+  background: var(--snow);
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.07),
+    -5px -5px 10px rgba(255,255,255,0.9);
+  border-radius: 12px;
+  transition: 0.2s ease-in-out;
+}
+
+.n-subject-table td {
+  padding: 10px;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+/* TEXT ALIGNMENT */
+.n-subject-table tbody td:nth-child(3) {
+  text-align: center; 
+}
+
+.n-subject-table tbody tr:hover {
+  transform: translateY(-1px);
+}
+
+/* FORM */
+
+.student-card {
+  background: var(--snow); 
+  border-radius: 16px;
+  padding: 2rem;
+  margin: auto;
+  box-shadow:
+    6px 6px 12px rgba(0,0,0,0.08),
+    -6px -6px 12px rgba(255,255,255,0.9);
+  max-width: 1400px;  
+}
+
+.card-header-solid {
+  background: var(--snow); 
+  /* border-radius: 12px;
+  padding: 0.75rem 1rem; */
+  font-weight: 600;
+  color: var(--navy);
+  text-align: center;
+  /* box-shadow:
+    inset 1px 1px 3px rgba(0,0,0,0.08),
+    inset -1px -1px 3px rgba(255,255,255,0.7); */
+  margin-bottom: 1.5rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-control, .form-select {
+  background: var(--snow) !important; 
+  border-radius: 20px !important;
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+  color: #60606483 !important;
+  box-shadow:
+    inset 4px 4px 8px rgba(0,0,0,0.06),
+    inset -4px -4px 8px rgba(255,255,255,0.9);
+  transition: 0.25s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+  background: var(--snow) !important;
+  color: #333 !important;
+  outline: none !important;
+  box-shadow:
+    inset 2px 2px 4px rgba(0,0,0,0.08),
+    inset -2px -2px 4px rgba(255,255,255,0.85),
+    4px 4px 8px rgba(0,0,0,0.06),
+    -4px -4px 8px rgba(255,255,255,0.9);
+  transition: 0.25s ease-in-out;
+}
+
+.show-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  box-sizing: border-box;
+}

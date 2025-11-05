@@ -1,124 +1,38 @@
-<style>
-  :root {
-    --pink: #F8C8DC;
-    --peach: #F8E4C8;
-    --mint: #C8F8E4;
-    --sky: #C8DCF8;
-  }
+<h1 class="text-center bi bi-people-fill"> STUDENTS</h1>
 
-  h1 {
-    color: #a94064;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(169, 64, 100, 0.2);
-  }
 
-  .table-custom {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  }
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="text-end mb-3">
+        <%= link_to "\tNew Student", new_student_path, class: " bi bi-person-add btn-n btn-mint btn-new" %>
+    </div>
 
-  .table-custom thead {
-    background: linear-gradient(90deg, var(--pink), var(--sky));
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .table-custom tbody tr:hover {
-    background-color: var(--mint);
-    transition: 0.2s;
-  }
-
-  .table-custom td, .table-custom th {
-    vertical-align: middle;
-  }
-
-  .table-custom td.actions-cell {
-    white-space: nowrap;
-    width: 180px;
-    text-align: center;
-  }
-
-  .table-custom td.actions-cell .btn {
-    margin: 2px;
-    padding: 2px 8px;
-    font-size: 0.85rem;
-  }
-
-  .btn-primary {
-    background-color: var(--sky);
-    border: none;
-    color: #000;
-  }
-  .btn-primary:hover {
-    background-color: #a7c7e7;
-  }
-
-  .btn-warning {
-    background-color: var(--peach);
-    border: none;
-    color: #000;
-  }
-  .btn-warning:hover {
-    background-color: #edb971;
-  }
-
-  .btn-danger {
-    background-color: var(--pink);
-    border: none;
-    color: #000;
-  }
-  .btn-danger:hover {
-    background-color: #f28da8;
-  }
-
-  .btn-success {
-    background-color: var(--mint);
-    border: none;
-    color: #000;
-  }
-  .btn-success:hover {
-    background-color: #a8ebd0;
-  }
-</style>
-
-<h1 class="mb-4 text-center bi bi-people-fill me-1">Students</h1>
-
-<div class="card p-3 shadow-sm">
-  <table class="table table-bordered table-striped table-hover table-custom">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Year Level</th>
-        <th>Program</th>
-        <th>Units</th>
-        <th>Total Assessment</th>
-        <th>Department</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @students.each do |student| %>
+    <table class="n-table">
+      <thead>
         <tr>
-          <td><%= student.name %></td>
-          <td><%= student.year_level %></td>
-          <td><%= student.program %></td>
-          <td><%= student.number_of_units %></td>
-          <td><%= student.total_assessment %></td>
-          <td><%= student.department.name %></td>
-          <td class="actions-cell">
-            <%= link_to "Show", student, class: "btn btn-sm btn-primary" %>
-            <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-warning" %>
-            <%= link_to "Delete", student, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
-          </td>
+          <th>NAME</th>
+          <th>YEAR LEVEL</th>
+          <th>DEPARTMENT</th>
+          <th>PROGRAM</th>
+          <th>ACTIONS</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <div class="text-end">
-      <%= link_to "New Student", new_student_path, class: "btn btn-success mt-3 px-4" %>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.year_level %></td>
+            <td><%= student.department.name %></td>
+            <td><%= student.program %></td>
+            <td class="actions-cell">
+              <%= link_to "Show", student, class: "btn-n btn-sky" %>
+              <%= link_to "Edit", edit_student_path(student), class: "btn-n btn-peach" %>
+              <%= link_to "Delete", student, class: "btn-n btn-pink" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

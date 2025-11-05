@@ -1,85 +1,35 @@
-<style>
-  .student-card {
-    background: #fff;
-    border: 2px solid #dee2e6;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    max-width: 650px;
-    margin: 2rem auto;
-    overflow: hidden;
-  }
+<div class="n-wrapper">
+ <div class="student-card">
+    <div class="card-header-solid">
+      <h2 class="mb-0"><%= student.new_record? ? "ADDING NEW STUDENT" : "EDITING STUDENT" %></h5>
+    </div>
 
-  .card-header-solid {
-    background-color: #F8C8DC; 
-    color: #333;
-    text-align: center;
-    padding: 0.75rem;
-    font-weight: 600;
-    border-bottom: 1px solid #dee2e6;
-  }
+    <div class="card-body">
+      <%= form_with(model: student, local: true) do |form| %>
+        <div class="mb-3">
+          <%= form.label :name, "Name" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Enter student name" %>
+        </div>
 
-  .card-body {
-    padding: 1.5rem 2rem;
-    background-color: #fff;
-  }
+        <div class="mb-3">
+          <%= form.label :year_level, "Year level" %>
+          <%= form.number_field :year_level, class: "form-control", placeholder: "Enter year level", min: 1 %>
+        </div>
 
-  .form-control, .form-select {
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    transition: 0.3s;
-  }
+        <div class="mb-3">
+          <%= form.label :program, "Program" %>
+          <%= form.text_field :program, class: "form-control", placeholder: "Enter program/course" %>
+        </div>
 
-  .form-control:focus, .form-select:focus {
-    border-color: #a7c7e7;
-    box-shadow: 0 0 0 0.2rem rgba(167, 199, 231, 0.3);
-  }
+        <div class="mb-3">
+          <%= form.label :department_id, "Department" %>
+          <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Select a department" }, class: "form-select" %>
+        </div>
 
-  .pastel-btn {
-    background-color: #C8F8E4;
-    color: #333;
-    font-weight: 500;
-    border-radius: 8px;
-    border: none;
-    padding: 0.45rem 1.4rem;
-    transition: 0.3s;
-  }
-
-  .pastel-btn:hover {
-    background-color: #a8ebd0; 
-  }
-</style>
-
-<div class="student-card">
-  <div class="card-header-solid">
-    <h5 class="mb-0"><%= student.new_record? ? "New Student" : "Edit Student" %></h5>
-  </div>
-
-  <div class="card-body">
-    <%= form_with(model: student, local: true) do |form| %>
-      <div class="mb-3">
-        <%= form.label :name, "Name" %>
-        <%= form.text_field :name, class: "form-control", placeholder: "Enter student name" %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :year_level, "Year level" %>
-        <%= form.number_field :year_level, class: "form-control", min: 1 %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :program, "Program" %>
-        <%= form.text_field :program, class: "form-control", placeholder: "Enter program/course" %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :department_id, "Department" %>
-        <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Select a department" }, class: "form-select" %>
-      </div>
-
-      <div class="text-end mt-4">
-        <%= form.submit student.new_record? ? "Create Student" : "Update Student", class: "btn pastel-btn" %>
-      </div>
-    <% end %>
+        <div class="text-end mt-4">
+          <%= form.submit student.new_record? ? "Create Student" : "Update Student", class: "btn-n btn-peach" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

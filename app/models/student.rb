@@ -3,5 +3,5 @@ class Student < ApplicationRecord
   has_many :classlists, dependent: :destroy
   has_many :sections, through: :classlists, dependent: :destroy
   has_many :relationships, dependent: :destroy
-  has_many :guardians, through: :relationship, dependent: :destroy
+  has_many :guardians, through: :relationships, dependent: :destroy
 end
