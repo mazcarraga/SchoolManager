@@ -22,10 +22,11 @@
         <% @students.each do |student| %>
           <tr>
             <td><%= student.name %></td>
-            <td><%= student.year_level %></td>
+            <td class="text-center">
+              <%= student.year_level %></td>
             <td><%= student.department.name %></td>
             <td><%= student.program %></td>
-            <td class="actions-cell">
+            <td class="actions-cell text-center">
               <%= link_to "Show", student, class: "btn-n btn-sky" %>
               <%= link_to "Edit", edit_student_path(student), class: "btn-n btn-peach" %>
               <%= link_to "Delete", student, class: "btn-n btn-pink" %>

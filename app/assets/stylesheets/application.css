@@ -87,7 +87,7 @@ body {
   vertical-align: middle;
 }
 
-.n-table tbody td:nth-child(1),
+/* .n-table tbody td:nth-child(1),
 .n-table tbody td:nth-child(3),
 .n-table tbody td:nth-child(4) {
   text-align: left;
@@ -106,7 +106,7 @@ body {
 
 .actions-cell a {
   margin: 0 4px;
-}
+} */
 
 
 /* BUTTONS DESIGN */
@@ -210,6 +210,18 @@ body {
 /* FORM */
 
 .student-card {
+  font-family: 'Questrial', sans-serif;
+  background: var(--snow); 
+  border-radius: 50px;
+  padding: 30px;
+  margin: auto;
+  box-shadow:
+    10px 10px 20px rgba(0,0,0,0.08),
+    -10px -10px 20px rgba(255,255,255,0.9);
+  max-width: 1400px;  
+}
+
+.form-card {
   font-family: 'Questrial', sans-serif;
   background: var(--snow); 
   border-radius: 50px;
