@@ -1,35 +1,64 @@
-<%= render @teacher %>
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="n-card-header fw-semibold text-dark">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2 class="teacher-title"><%= @teacher.name %></h2>
+        <%= link_to "Edit Teacher", edit_teacher_path(@teacher), class: "btn-n btn-peach" %>
+      </div>
 
-<h3>List of Subjects:</h3>
+      <div class="n-meta text-muted" style="font-size:0.9rem; margin-bottom:12px;">
+        <%= @teacher.email %> &nbsp;|&nbsp; <%= @teacher.department&.name %> Department
+      </div>
+    </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Section</th>
-        <th>Subject Name</th>
-        <th>Room</th>
-        <th>Time Slot</th>
-        <th>Number of Units</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @teacher.subjects.each do |subject| %>
-      <% subject.sections.each do |section| %>
+    <div class="n-card-body">
+      <div style="display:flex; gap:24px; align-items:flex-start;">
+        <div style="flex:1; padding-right:12px;">
+          <p style="margin:0 0 6px;"><strong>Specialization:</strong> <%= @teacher.specialization %></p>
+          <p style="margin:0 0 6px;"><strong>Status:</strong> <%= @teacher.status %></p>
+          <p style="margin:0 0 6px;"><strong>Units:</strong> <%= @teacher.number_of_units %></p>
+          <p style="margin:0 0 0;"><strong>Monthly Salary:</strong> ₱<%= number_with_precision(@teacher.monthly_salary, precision: 2, delimiter: ',') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="n-card">
+    <h4 class="fw-semibold mb-3 bi bi-book-half" style="color: #333;"> SUBJECTS</h4>
+
+    <table class="n-subject-table">
+      <thead>
         <tr>
-          <td><%= section.name %></td>
-          <td><%= section.subject.name %></td>
-          <td><%= section.room %></td>
-          <td><%= section.time_slot %></td>
-          <td><%= section.subject.number_of_units %></td>
+          <th>SUBJECT</th>
+          <th>SECTION</th>
+          <th>ROOM</th>
+          <th>TIMESLOT</th>
+          <th>UNITS</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+      </thead>
 
-<div>
-  <%= link_to "Edit this teacher", edit_teacher_path(@teacher) %> |
-  <%= link_to "Back to teachers", teachers_path %>
+      <tbody>
+        <% @teacher.subjects.each do |subject| %>
+          <% subject.sections.each do |section| %>
+            <tr>
+              <td><%= section.subject.name %></td>
+              <td><%= section.name %></td>
+              <td><%= section.room %></td>
+              <td><%= section.time_slot %></td>
+              <td style="text-align:center;"><%= section.subject.number_of_units %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-  <%= button_to "Destroy this teacher", @teacher, method: :delete %>
+  <div class="show-actions" style="display:flex; justify-content:space-between; margin-top:18px;">
+    <%= link_to "← Back to Teachers", teachers_path, class: "btn-n btn-grey" %>
+
+    <%= link_to "Delete Teacher", @teacher,
+          data: { turbo_method: :delete },
+          method: :delete,
+          class: "btn-n btn-pink" %>
+  </div>
 </div>

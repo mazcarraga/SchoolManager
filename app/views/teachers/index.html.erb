@@ -1,34 +1,35 @@
-<h1 class="mb-3">Teachers</h1>
+<div class="n-wrapper">
+  <h1 class="card-header-solid text-center bi bi-person-video3"> TEACHERS</h1>
 
-<table class="table table-bordered table-striped table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Specialization</th>
-      <th>Status</th>
-      <th>Units</th>
-      <th>Monthly Salary</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @teachers.each do |teacher| %>
-      <tr>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.email %></td>
-        <td><%= teacher.specialization %></td>
-        <td><%= teacher.status %></td>
-        <td><%= teacher.number_of_units %></td>
-        <td><%= teacher.monthly_salary %></td>
-        <td>
-          <%= link_to "Show", teacher, class: "btn btn-sm btn-primary" %>
-          <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-warning" %>
-          <%= link_to "Delete", teacher, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="n-card">
+    <div class="text-end mb-3">
+        <%= link_to "\tNew Teacher", new_teacher_path, class: " bi bi-person-add btn-n btn-mint btn-new" %>
+    </div>
 
-<%= link_to "New teacher", new_teacher_path, class: "btn btn-warning mt-3" %>
+    <table class="n-table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>DEPARTMENT</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @teachers.each do |teacher| %>
+          <tr>
+            <td><%= teacher.name %></td>
+            <td><%= teacher.email %></td>
+            <td><%= teacher.department.name %></td>
+            <td class="actions-cell text-center">
+              <%= link_to "Show", teacher, class: "btn-n btn-sky" %>
+              <%= link_to "Edit", edit_teacher_path(teacher), class: "btn-n btn-peach" %>
+              <%= link_to "Delete", teacher, class: "btn-n btn-pink" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
