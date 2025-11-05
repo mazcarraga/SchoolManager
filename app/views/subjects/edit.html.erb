@@ -1,12 +1,10 @@
 <% content_for :title, "Editing subject" %>
 
-<h1>Editing subject</h1>
-
 <%= render "form", subject: @subject %>
 
-<br>
-
-<div>
-  <%= link_to "Show this subject", @subject %> |
-  <%= link_to "Back to subjects", subjects_path %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
+    <%= link_to "← Back to Subjects", subjects_path, class: "btn-n btn-grey" %>
+    <%= link_to "Show this Subject", @subject, class: "btn-n btn-sky" %>
+  </div>
 </div>
