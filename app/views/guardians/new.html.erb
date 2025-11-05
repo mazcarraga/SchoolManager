@@ -1,11 +1,14 @@
-<% content_for :title, "New guardian" %>
+<% content_for :title, "New Guardian" %>
 
-<h1>New guardian</h1>
+<div class="n-wrapper">
 
-<%= render "form", guardian: @guardian %>
+  <div class="neumorphic-card text-center">
 
-<br>
+    <%= render "form", guardian: @guardian %>
 
-<div>
-  <%= link_to "Back to guardians", guardians_path %>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <%= link_to "← Back to Guardians", guardians_path, class: "btn-n btn-grey" %>
+  </div>
 </div>
