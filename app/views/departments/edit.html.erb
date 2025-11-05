@@ -1,12 +1,10 @@
 <% content_for :title, "Editing department" %>
 
-<h1>Editing department</h1>
-
 <%= render "form", department: @department %>
 
-<br>
-
-<div>
-  <%= link_to "Show this department", @department %> |
-  <%= link_to "Back to departments", departments_path %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
+    <%= link_to "← Back to Departments", departments_path, class: "btn-n btn-grey" %>
+    <%= link_to "Show this Department", @department, class: "btn-n btn-sky" %>
+  </div>
 </div>
