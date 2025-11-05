@@ -1,25 +1,58 @@
-<h1>List of Staffs</h1>
+<h1 class="text-center bi bi-people-fill"> STAFFS </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Monthly Salary</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @staffs.each do |staff| %>
-      <tr>
-        <td><%= staff.name %></td>
-        <td><%= staff.email %></td>
-        <td><%= staff.monthly_salary %></td>
-        <td><%= staff.status %></td>
-        <td><%= link_to "Show this staff", staff %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="text-end mb-3">
+      <%= link_to " New Staff", new_staff_path, class: "bi bi-person-add btn-n btn-mint btn-new" %>
+    </div>
 
-<%= link_to "New staff", new_staff_path %>
+    <!-- ✅ Inline CSS for button alignment -->
+    <style>
+      .actions-cell {
+        display: flex;
+        gap: 8px; 
+        justify-content: center; 
+        align-items: center;
+      }
+
+      .actions-cell .btn-n {
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+    <table class="n-table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>MONTHLY SALARY</th>
+          <th>STATUS</th>
+          <th>DEPARTMENT</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @staffs.each do |staff| %>
+          <tr>
+            <td><%= staff.name %></td>
+            <td><%= staff.email %></td>
+            <td>₱<%= number_with_precision(staff.monthly_salary, precision: 2, delimiter: ',') %></td>
+            <td><%= staff.status %></td>
+            <td><%= staff.department&.name || "No Department" %></td>
+
+            <td class="actions-cell">
+              <%= link_to "Show", staff, class: "btn-n btn-sky" %>
+              <%= link_to "Edit", edit_staff_path(staff), class: "btn-n btn-peach" %>
+              <%= link_to "Delete", staff, class: "btn-n btn-pink", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
