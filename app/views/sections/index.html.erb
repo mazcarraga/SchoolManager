@@ -1,28 +1,39 @@
-<h1>List of Sections</h1>
+<h1 class="text-center bi bi-collection-fill"> SECTIONS</h1>
 
-<table class="table table-bordered table-striped table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>Section Name</th>
-      <th>Room</th>
-      <th>Time Slot</th>
-      <th>Subject</th>
-      <th>Number of Students</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @sections.each do |section| %>
-      <tr>
-        <td><%= section.name %></td>
-        <td><%= section.room %></td>
-        <td><%= section.time_slot %></td>
-        <td><%= section.subject.name %></td>
-        <td><%= section.number_of_students %></td>
-        <td><%= link_to "Show this section", section %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="text-end mb-3">
+      <%= link_to "\tNew Section", new_section_path, class: "bi bi-plus-circle btn-n btn-mint btn-new" %>
+    </div>
 
-<%= link_to "New section", new_section_path %>
+    <table class="n-table">
+      <thead>
+        <tr>
+          <th>SECTION NAME</th>
+          <th>ROOM</th>
+          <th>TIME SLOT</th>
+          <th>SUBJECT</th>
+          <th>NUMBER OF STUDENTS</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @sections.each do |section| %>
+          <tr>
+            <td><%= section.name %></td>
+            <td><%= section.room %></td>
+            <td><%= section.time_slot %></td>
+            <td><%= section.subject.name %></td>
+            <td><%= section.number_of_students %></td>
+            <td class="actions-cell">
+              <%= link_to "Show", section, class: "btn-n btn-sky" %>
+              <%= link_to "Edit", edit_section_path(section), class: "btn-n btn-peach" %>
+              <%= link_to "Delete", section, class: "btn-n btn-pink" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,37 +1,46 @@
-<%= form_with(model: section) do |form| %>
-  <% if section.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
-
-      <ul>
-        <% section.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="n-wrapper">
+  <div class="section-card">
+    <div class="card-header-solid">
+      <h2 class="mb-0"><%= section.new_record? ? "New Section" : "Edit Section" %></h2>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="card-body">
+      <%= form_with(model: section, local: true) do |form| %>
+        <% if section.errors.any? %>
+          <div class="alert alert-danger mb-4">
+            <h5><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h5>
+            <ul>
+              <% section.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-  <div>
-    <%= form.label :room, style: "display: block" %>
-    <%= form.text_field :room %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :name, "Section Name" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Enter section name" %>
+        </div>
 
-  <div>
-    <%= form.label :time_slot, style: "display: block" %>
-    <%= form.text_field :time_slot %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :room, "Room" %>
+          <%= form.text_field :room, class: "form-control", placeholder: "Enter room" %>
+        </div>
 
-  <div>
-    <%= form.label :subject_id, style: "display: block" %>
-    <%= form.collection_select :subject_id, Subject.all, :id, :name, prompt: "Select a subject" %>
-  </div>
+        <div class="mb-3">
+          <%= form.label :time_slot, "Time Slot" %>
+          <%= form.text_field :time_slot, class: "form-control", placeholder: "Enter time slot" %>
+        </div>
 
-  <div>
-    <%= form.submit %>
+        <div class="mb-3">
+          <%= form.label :subject_id, "Subject" %>
+          <%= form.collection_select :subject_id, Subject.all, :id, :name, { prompt: "Select a subject" }, class: "form-select" %>
+        </div>
+
+        <div class="text-end mt-4">
+          <%= form.submit section.new_record? ? "Save Section" : "Update Section", class: "btn-n btn-peach" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

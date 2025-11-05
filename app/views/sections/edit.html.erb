@@ -1,12 +1,10 @@
 <% content_for :title, "Editing section" %>
 
-<h1>Editing section</h1>
-
 <%= render "form", section: @section %>
 
-<br>
-
-<div>
-  <%= link_to "Show this section", @section %> |
-  <%= link_to "Back to sections", sections_path %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
+    <%= link_to "← Back to Sections", sections_path, class: "btn-n btn-grey" %>
+    <%= link_to "Show this Section", @section, class: "btn-n btn-sky" %>
+  </div>
 </div>
