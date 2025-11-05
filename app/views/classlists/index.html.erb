@@ -1,22 +1,32 @@
-<h1>List of Classlists</h1>
+<h1 class="text-center bi bi-clipboard-check"> CLASSLISTS</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Student</th>
-      <th>Section</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @classlists.each do |classlist| %>
-    <tr>
-      <td><%= classlist.student.name %></td>
-      <td><%= classlist.section.name %></td>
-      <td><%= link_to "Show this classlist", classlist %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="text-end mb-3">
+      <%= link_to "\tNew Classlist", new_classlist_path, class: "bi bi-plus-circle btn-n btn-mint btn-new" %>
+    </div>
 
-<%= link_to "New classlist", new_classlist_path %>
+    <table class="n-table">
+      <thead>
+        <tr>
+          <th>STUDENT</th>
+          <th>SECTION</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @classlists.each do |classlist| %>
+          <tr>
+            <td><%= classlist.student.name %></td>
+            <td><%= classlist.section.name %></td>
+            <td class="actions-cell">
+              <%= link_to "Show", classlist, class: "btn-n btn-sky" %>
+              <%= link_to "Edit", edit_classlist_path(classlist), class: "btn-n btn-peach" %>
+              <%= link_to "Delete", classlist, method: :delete, data: { confirm: "Are you sure?" }, class: "btn-n btn-pink" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

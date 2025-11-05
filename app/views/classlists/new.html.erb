@@ -1,11 +1,9 @@
 <% content_for :title, "New classlist" %>
 
-<h1>New classlist</h1>
-
 <%= render "form", classlist: @classlist %>
 
-<br>
-
-<div>
-  <%= link_to "Back to classlists", classlists_path %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
+    <%= link_to "← Back to Classlists", classlists_path, class: "btn-n btn-grey" %>
+  </div>
 </div>
