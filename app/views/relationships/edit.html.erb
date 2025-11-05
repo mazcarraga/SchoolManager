@@ -1,12 +1,10 @@
-<% content_for :title, "Editing relationship" %>
-
-<h1>Editing relationship</h1>
+<% content_for :title, "Editing Relationship" %>
 
 <%= render "form", relationship: @relationship %>
 
-<br>
-
-<div>
-  <%= link_to "Show this relationship", @relationship %> |
-  <%= link_to "Back to relationships", relationships_path %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto; display: flex; justify-content: space-between;">
+    <%= link_to "← Back to Relationships", relationships_path, class: "btn-n btn-grey" %>
+    <%= link_to "Show this Relationship", @relationship, class: "btn-n btn-sky" %>
+  </div>
 </div>
