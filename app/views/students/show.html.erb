@@ -22,7 +22,7 @@
   </div>
 
   <div class="n-card">
-    <h5 class="fw-semibold mb-3 bi bi-book-half" style="color: #333;"> List of Subjects</h5>
+    <h4 class="fw-semibold mb-3 bi bi-book-half" style="color: #333;"> SUBJECTS</h5>
     <table class="n-subject-table">
       <thead>
         <tr>
@@ -48,7 +48,7 @@
 
   <div class="show-actions" style="display:flex; justify-content:space-between; margin-top:18px;">
     <%= link_to "← Back to Students", students_path, class: "btn-n btn-grey" %>
-    <%= button_to "Delete", @student,
+    <%= button_to "Delete Student", @student,
         method: :delete,
         data: { confirm: "Are you sure you want to delete this student?" },
         class: "btn-n btn-pink" %>
