@@ -1,92 +1,56 @@
-<div class="card shadow-sm mb-4 border-0">
-  <div class="card-header fw-semibold text-dark" style="background-color: #f8f9fa;">
-    <h4 class="mb-1"><%= @student.name %></h4>
-    <small class="text-muted"><%= @student.program %> | Year <%= @student.year_level %></small>
+<div class="n-wrapper">
+  <div class="n-card">
+    <div class="n-card-header fw-semibold text-dark">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2 class="student-title"><%= @student.name %></h2>
+        <%= link_to "Edit Student", edit_student_path(@student), class: "btn-n btn-peach" %>
+      </div>
+
+      <div class="n-meta text-muted" style="font-size:0.9rem; margin-bottom:12px;">
+        <%= @student.department.name %> Department &nbsp;| <%= @student.program %> &nbsp;|&nbsp; Year <%= @student.year_level %>
+      </div>
+    </div>
+
+    <div class="n-card-body">
+      <div style="display:flex; gap:24px; align-items:flex-start;">
+        <div style="flex:1; solid #ddd; padding-right:12px;">
+          <p style="margin:0 0 12px;"><strong>Total Assessment:</strong> ₱<%= number_with_precision(@student.total_assessment, precision: 2, delimiter: ',') %></p>
+          <p style="margin:0 0 0;"><strong>Total Units:</strong> <%= @student.number_of_units %></p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="card-body">
-    <p><strong>Total Assessment:</strong> ₱<%= @student.total_assessment %></p>
-    <p><strong>Total Units:</strong> <%= @student.number_of_units %></p>
-    <p><strong>Department:</strong> <%= @student.department.name %></p>
+  <div class="n-card">
+    <h4 class="fw-semibold mb-3 bi bi-book-half" style="color: #333;"> SUBJECTS</h5>
+    <table class="n-subject-table">
+      <thead>
+        <tr>
+          <th>SUBJECT</th>
+          <th>SECTION</th>
+          <th>UNITS</th>
+          <th>TEACHER</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @student.classlists.each do |classlist| %>
+          <tr>
+            <td><%= classlist.section.subject.name %></td>
+            <td><%= classlist.section.name %></td>
+            <td><%= classlist.section.subject.number_of_units %></td>
+            <td><%= classlist.section.subject.teacher.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-</div>
 
-<h5 class="fw-semibold mb-3" style="color: #333;">📚 List of Subjects</h5>
-
-<table class="table table-bordered table-striped align-middle" style="border-color: #dee2e6;">
-  <thead class="table-light text-center">
-    <tr>
-      <th>Subject</th>
-      <th>Section</th>
-      <th>Units</th>
-      <th>Teacher</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @student.classlists.each do |classlist| %>
-      <tr>
-        <td class="text-start"><%= classlist.section.subject.name %></td>
-        <td class="text-start"><%= classlist.section.name %></td>
-        <td class="text-start"><%= classlist.section.subject.number_of_units %></td>
-        <td class="text-start"><%= classlist.section.subject.teacher.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div class="d-flex justify-content-end gap-2 mt-4">
-  <%= link_to "← Back to Students", students_path, class: "btn back-btn" %>
-  <%= link_to "Edit Student", edit_student_path(@student), class: "btn edit-btn" %>
-  <%= button_to "Delete", @student,
+  <div class="show-actions" style="display:flex; justify-content:space-between; margin-top:18px;">
+    <%= link_to "← Back to Students", students_path, class: "btn-n btn-grey" %>
+    <%= button_to "Delete Student", @student,
         method: :delete,
         data: { confirm: "Are you sure you want to delete this student?" },
-        class: "btn delete-btn" %>
+        class: "btn-n btn-pink" %>
+  </div>
 </div>
-
-<style>
-  .back-btn {
-    background-color: #f8c8dc; 
-    color: #333;
-    border-radius: 6px; 
-    border: none;
-    padding: 0.4rem 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-
-  .back-btn:hover {
-    background-color: #f3a7c2;
-  }
-
-  .edit-btn {
-    background-color: #c8f8e4; 
-    color: #333;
-    border-radius: 6px;
-    border: none;
-    padding: 0.4rem 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-
-  .edit-btn:hover {
-    background-color: #a8ebd0;
-  }
-
-  .delete-btn {
-    background-color: #f8d0c8; 
-    color: #333;
-    border-radius: 6px;
-    border: none;
-    padding: 0.4rem 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-
-  .delete-btn:hover {
-    background-color: #f5a9a0;
-  }
-
-  .gap-2 > * {
-    margin-left: 0.5rem;
-  }
-</style>

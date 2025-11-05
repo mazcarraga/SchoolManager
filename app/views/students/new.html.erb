@@ -2,43 +2,8 @@
 
 <%= render "form", student: @student %>
 
-<style>
-  .pastel-btn {
-    background-color: #c8dcf8; 
-    color: #333;
-    border-radius: 6px; 
-    border: none;
-    padding: 0.45rem 1rem;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-
-  .pastel-btn:hover {
-    background-color: #a7c7e7;
-  }
-
-  .back-btn {
-    background-color: #f8c8dc;
-    color: #333;
-    border-radius: 6px;
-    border: none;
-    padding: 0.45rem 1rem;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-
-  .back-btn:hover {
-    background-color: #f3a7c2;
-  }
-
-  .action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 1.5rem;
-  }
-</style>
-
-<div class="action-buttons">
-  <%= link_to "← Back to Students", students_path, class: "btn back-btn" %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
+    <%= link_to "← Back to Students", students_path, class: "btn-n btn-grey" %>
+  </div>
 </div>
