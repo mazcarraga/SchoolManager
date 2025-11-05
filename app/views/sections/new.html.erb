@@ -1,11 +1,9 @@
 <% content_for :title, "New section" %>
 
-<h1>New section</h1>
-
 <%= render "form", section: @section %>
 
-<br>
-
-<div>
-  <%= link_to "Back to sections", sections_path %>
+<div class="n-wrapper">
+  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
+    <%= link_to "← Back to Sections", sections_path, class: "btn-n btn-grey" %>
+  </div>
 </div>
