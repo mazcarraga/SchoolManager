@@ -1,32 +1,43 @@
-<%= form_with(model: relationship) do |form| %>
-  <% if relationship.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(relationship.errors.count, "error") %> prohibited this relationship from being saved:</h2>
-
-      <ul>
-        <% relationship.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="n-wrapper">
+  <div class="student-card">
+    <div class="card-header-solid">
+      <h2 class="mb-0"><%= @relationship.new_record? ? "ADDING RELATIONSHIP" : "EDITING RELATIONSHIP" %></h2>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :student_id, style: "display: block" %>
-    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
-  </div>
+    <div class="card-body">
+      <%= form_with(model: @relationship, local: true) do |f| %>
 
-  <div>
-    <%= form.label :guardian_id, style: "display: block" %>
-    <%= form.collection_select :guardian_id, Guardian.all, :id, :name, prompt: "Select a guardian" %>
-  </div>
+        <% if @relationship.errors.any? %>
+          <div class="alert alert-danger">
+            <h5><%= pluralize(@relationship.errors.count, "error") %> prohibited this relationship from being saved:</h5>
+            <ul>
+              <% @relationship.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-  <div>
-    <%= form.label :relation, style: "display: block" %>
-    <%= form.text_field :relation %>
-  </div>
+        <div class="form-group">
+          <%= f.label :student_id, "Student", style: "display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.collection_select :student_id, Student.all, :id, :name, { prompt: "Select a student" }, class: "form-select" %>
+        </div>
 
-  <div>
-    <%= form.submit %>
+        <div class="form-group">
+          <%= f.label :guardian_id, "Guardian", style: "display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.collection_select :guardian_id, Guardian.all, :id, :name, { prompt: "Select a guardian" }, class: "form-select" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :relation, "Relationship", style: "display: block; margin-top: 8px; margin-bottom: 8px;" %>
+          <%= f.text_field :relation, class: "form-control" %>
+        </div>
+
+        <div class="actions" style="margin-top: 20px;">
+          <%= f.submit class: "btn-n btn-mint" %>
+        </div>
+
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
