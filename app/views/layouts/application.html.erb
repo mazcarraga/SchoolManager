@@ -3,27 +3,25 @@
   <head>
     <title>Mynewapplication</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+      
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+
     <!-- Bootstrap CSS CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     >
-
+<!-- Google Font: Questrial, Montserrat-->
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    >
-
-    <!-- Google Font: Questrial -->
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"
     >
 
     <!-- Custom pastel theme (optional CSS override block) -->
@@ -67,11 +65,12 @@
       .navbar-toggler {
         border: none;
       }
+
       .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'
-        xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(51,51,51,0.8)'
-        stroke-width='2' stroke-linecap='round' stroke-miterlimit='10'
-        d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+          xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(51,51,51,0.8)'
+          stroke-width='2' stroke-linecap='round' stroke-miterlimit='10'
+          d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
       }
     </style>
   </head>
@@ -98,30 +97,55 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-building me-1"></i> Departments'), departments_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-person-video3 me-1"></i> Teachers'), teachers_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-people-fill me-1"></i> Students'), students_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-diagram-3-fill me-1"></i> Sections'), sections_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-book-half me-1"></i> Subjects'), subjects_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-list-check me-1"></i> Classlists'), classlists_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-person-badge-fill me-1"></i> Staffs'), staffs_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-people me-1"></i> Guardians'), guardians_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to raw('<i class="bi bi-link-45deg me-1"></i> Student-Guardian'), relationships_path, class: "nav-link" %></li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-building me-1"></i> Departments'), departments_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-person-video3 me-1"></i> Teachers'), teachers_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-people-fill me-1"></i> Students'), students_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-diagram-3-fill me-1"></i> Sections'), sections_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-book-half me-1"></i> Subjects'), subjects_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-list-check me-1"></i> Classlists'), classlists_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-person-badge-fill me-1"></i> Staffs'), staffs_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-people me-1"></i> Guardians'), guardians_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to raw('<i class="bi bi-link-45deg me-1"></i> Student-Guardian'), relationships_path, class: "nav-link" %>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    
+
     <% flash.each do |key, message| %>
-      <div class="alert alert-<%= key == "notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
+      <div
+        class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %> alert-dismissible fade show"
+        role="alert">
         <%= message %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close">
+          </button>
       </div>
     <% end %>
 
     <%= yield %>
+
     <!-- Bootstrap JS CDN (Optional for dropdowns, nav, etc.) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
