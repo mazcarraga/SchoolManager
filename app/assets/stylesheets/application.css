@@ -283,3 +283,347 @@ body {
   margin: auto;
   box-sizing: border-box;
 }
+
+/*HOMEPAGE*/
+
+
+
+
+
+
+body {
+ font-family: 'Questrial', sans-serif;
+ color: white;
+ margin: 0;
+ padding: 0;
+ overflow-y: auto;
+ scroll-behavior: smooth;
+}
+
+
+.container {
+ padding-left: 1.5rem;
+ padding-right: 1.5rem;
+}
+
+
+#collegeCarousel {
+ position: relative;
+ height: 100vh;
+ overflow: visible;
+ margin-top: 0;
+}
+
+
+.carousel-inner img {
+ height: 100vh;
+ object-fit: cover;
+ filter: brightness(75%) contrast(105%);
+}
+
+
+.carousel-fade .carousel-item {
+ opacity: 0;
+ transition: opacity 0.5s ease-in-out;
+}
+.carousel-fade .carousel-item.active { opacity: 1; }
+
+
+.carousel-overlay-centered {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ text-align: center;
+ z-index: 10;
+ pointer-events: auto;
+}
+.carousel-overlay-centered h1 {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 4rem;
+ font-weight: 900;
+ color: white;
+ text-shadow: 0 3px 25px rgba(0,0,0,0.8);
+}
+.carousel-overlay-centered .btn {
+ background-color: #ffffff;
+ color: #4B0082;
+ border: none;
+ border-radius: 50px;
+ transition: all 0.3s ease;
+}
+.carousel-overlay-centered .btn:hover {
+ background-color: #4B0082;
+ color: white;
+ transform: scale(1.05);
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+ filter: invert(100%);
+ background-color: rgba(0,0,0,0);
+}
+
+
+.carousel-indicators [data-bs-target] {
+ width: 12px;
+ height: 12px;
+ border-radius: 50%;
+ background-color: rgba(255, 255, 255, 0.6);
+}
+.carousel-indicators .active { background-color: #4B0082; }
+
+
+.carousel-subtitle {
+ font-size: 1.5rem;
+ font-weight: 400;
+ margin-top: 0.5rem;
+ color: white;
+ text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.text-purple { color: #4B0082; }
+
+#aboutSection {
+ position: relative;  
+ z-index: 1;          
+ background-color: #f8f4ff;
+ scroll-margin-top: 70px;
+}
+
+#aboutSection .row {
+ gap: 40px;
+}
+
+.shadow-lg {
+ box-shadow: 0 0 25px rgba(0,0,0,0.15) !important;
+}
+.rounded-4 {
+ border-radius: 1rem !important;
+}
+.border {
+ border-width: 1px !important;
+}
+.bg-white { background-color: white !important; }
+.bg-opacity-75 { background-color: rgba(255,255,255,0.55) !important; }
+.backdrop-blur-sm { backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+
+.departments-section {
+ background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+ url('<%= asset_path("bg1.png") %>') center/cover no-repeat;
+ min-height: 100vh; 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 60px 0; 
+ color: white;
+}
+
+.departments-header {
+ color: #ffffff;
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 900;
+ font-size: 2.3rem;
+ text-align: center;
+}
+
+.departments-subtext {
+ color: #f5f5f5;
+ font-size: 1.05rem;
+ max-width: 750px;
+ line-height: 1.6;
+ margin: 0 auto;
+ text-align: center;
+}
+
+.dept-card-glass {
+ display: flex;
+ align-items: center;
+ gap: 30px; 
+ background: rgba(255, 255, 255, 0.18);
+ border-radius: 30px;
+ padding: 35px; 
+ height: 300px; 
+ backdrop-filter: blur(15px);
+ -webkit-backdrop-filter: blur(15px);
+ border: 1px solid rgba(255, 255, 255, 0.35);
+ box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.2),
+             -8px -8px 25px rgba(75, 0, 130, 0.35);
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+ cursor: pointer;
+}
+.dept-card-glass:hover {
+ transform: translateY(-8px);
+ box-shadow: 2px 2px 8px rgba(0,0,0,0.15),
+             -2px -2px 8px rgba(75,0,130,0.10);
+}
+
+
+.dept-card-img {
+ width: 40%; height: 100%;
+ object-fit: cover;
+ border-radius: 20px;
+ outline: 2px dotted rgba(255,255,255,0.4);
+ outline-offset: 10px;
+}
+
+
+.dept-card-content {
+ width: 60%;
+ color: white;
+ position: relative;
+ display: flex;
+ flex-direction: column;
+}
+
+
+.dept-card-content h4 {
+ font-weight: 700;
+ margin-bottom: 12px; 
+ font-size: 1.5rem;  
+}
+
+
+.dept-card-content p {
+ font-size: 0.9rem;
+ opacity: 0.9;
+ font-style: italic; 
+}
+
+
+.programs-offered {
+ margin-top: 8px;
+ padding-left: 20px;
+ list-style: none;
+}
+.programs-offered li {
+ margin-bottom: 5px;
+ font-size: 0.95rem;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ color: #ffffff;
+}
+.programs-offered li::before {
+ content: "✔";
+ margin-right: 6px;
+ color: #28a745; 
+ font-weight: bold;
+}
+
+
+.explore-btn {
+ align-self: flex-end;
+ font-size: 0.8rem; 
+ margin-top: auto;
+ padding: 8px 22px;
+ border-radius: 40px;
+ border: 1px solid rgba(255, 255, 255, 0.35);
+ background: rgba(255, 255, 255, 0.15);
+ backdrop-filter: blur(12px);
+ -webkit-backdrop-filter: blur(12px);
+ color: white;
+ font-weight: 400;
+ cursor: pointer;
+ transition: all 0.3s ease;
+}
+.explore-btn:hover {
+ background: rgba(255, 255, 255, 0.95);
+ color: #4B0082;
+}
+
+@media (max-width: 768px) {
+ .dept-card-glass {
+   flex-direction: column;
+   height: auto;
+   text-align: center;
+ }
+ .dept-card-img {
+   width: 100%;
+   height: 180px;
+   border-radius: 20px;
+ }
+ .dept-card-content {
+   width: 100%;
+ }
+}
+
+.news-events-section {
+ background-color: #f3f0ff;
+}
+
+
+.news-header {
+ color: #4B0082 !important;
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 900;
+ font-size: 2.3rem;
+}
+
+
+.event-card {
+ background-color: #fff;
+ border: none;
+}
+
+
+.event-img {
+ height: 200px;
+ object-fit: cover;
+}
+
+
+.event-title {
+ font-size: 1rem;
+ font-weight: 600;
+ color: #2e1a63;
+ text-decoration: none;
+}
+.event-title:hover { text-decoration: underline; }
+
+
+.event-desc {
+ font-size: 0.9rem;
+ color: #555;
+}
+
+
+.event-date {
+ font-size: 0.85rem;
+ color: #7b6cae;
+ font-style: italic;
+ margin-bottom: 0;
+}
+
+
+.category-btn {
+ border: 2px solid #8a2be2;
+ background: transparent;
+ color: #8a2be2;
+ padding: 0.45rem 1.1rem;
+ font-size: 1rem;
+ border-radius: 50px;
+ transition: all 0.3s ease;
+ cursor: pointer;
+}
+.category-btn:hover, .category-btn.active {
+ background-color: #4B0082;
+ color: white;
+}
+
+
+.more-link {
+ color: #4B0082;
+ cursor: pointer;
+ font-weight: 600;
+ text-decoration: underline;
+ transition: color 0.3s ease;
+}
+.more-link:hover { color: #6a1fb3; }
+
+
+
+
+
+
