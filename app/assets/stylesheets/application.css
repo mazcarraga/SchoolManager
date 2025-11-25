@@ -19,6 +19,17 @@
   --mint:  #9FDECE;
   --navy:  #4A70A9;   
   --grey:  #d4d7dd;
+
+   /* NavBar Palette */
+  --purple-dark: #4e0c88;
+  --purple-mid: #923cdf;
+  --purple-light: #af67ee;
+  --purple-soft: #b17fdd;
+  --purple-bright: #b375ea;
+  --white: #ffffff;
+  --white-soft: #f8f8ff;
+  --shadow-light: rgba(255, 255, 255, 0.6);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
 }
 
 /* GLOBAL BASE STYLING */
@@ -621,9 +632,4 @@ body {
  transition: color 0.3s ease;
 }
 .more-link:hover { color: #6a1fb3; }
-
-
-
-
-
 
