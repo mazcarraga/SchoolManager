@@ -1,1 +1,136 @@
-<h2>This is the About Us page.</h2>
+<div class="about-hero-section">
+  <div class="about-hero-content">
+    <h1>Meet the Team</h1>
+    <p>Driven by creativity, discipline, and a shared vision — our team works together to build meaningful digital experiences.</p>
+    <!-- Team socials -->
+    <div class="team-socials-hero">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok fa-lg"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="team-container">
+
+  <!-- IVAN -->
+  <div class="team-card" 
+       data-name="Ivan Obias" data-role="Project Lead"
+       data-bio="Passionate about leading projects and creating impactful solutions."
+       data-skills="Project Management, UI/UX Strategy, Team Coordination"
+       data-education="BS Computer Engineering"
+       data-email="iobias@gbox.adnu.edu.ph"
+       data-socials='{"facebook":"https://facebook.com/ivan","instagram":"https://instagram.com/ivan","tiktok":"https://tiktok.com/@ivan","linkedin":"https://linkedin.com/in/ivan"}'>
+       
+    <img src="/assets/member1.jpg" class="team-photo">
+    <h3>IVAN</h3>
+    <p class="role">Project Lead</p>
+    <p class="short">Passionate about leading projects and creating impactful solutions.</p>
+
+    <div class="team-expanded"></div>
+  </div>
+
+  <!-- WILLAH -->
+  <div class="team-card" 
+       data-name="Ma. Willah Ederlyn Saturius" data-role="UI/UX Designer"
+       data-bio="Crafting intuitive user experiences through design and empathy."
+       data-skills="Figma, Design Systems, User Research"
+       data-education="BS Computer Engineering"
+       data-email="msaturius@gbox.adnu.edu.ph"
+       data-socials='{"facebook":"https://facebook.com/willah","instagram":"https://instagram.com/willah","tiktok":"https://tiktok.com/@willah","linkedin":"https://linkedin.com/in/willah"}'>
+       
+    <img src="/assets/member2.jpg" class="team-photo">
+    <h3>WILLAH</h3>
+    <p class="role">UI/UX Designer</p>
+    <p class="short">Design-focused and detail-oriented creator of clean interfaces.</p>
+
+    <div class="team-expanded"></div>
+  </div>
+
+  <!-- MARICOR -->
+  <div class="team-card" 
+       data-name="Maria Socorro Azcarraga" data-role="Developer"
+       data-bio="Backend-driven, performance-obsessed developer."
+       data-skills="Ruby on Rails, SQL, API Development"
+       data-education="BS Computer Engineering"
+       data-email="mazcarraga@gbox.adnu.edu.ph"
+       data-socials='{"facebook":"https://facebook.com/marico0or","instagram":"https://instagram.com/marico_or","tiktok":"https://tiktok.com/@gazeoftiger","linkedin":"https://linkedin.com/in/maricor"}'>
+       
+    <%= image_tag "maricor.png", class: "team-photo" %>
+    <h3>MARICOR</h3>
+    <p class="role">Developer</p>
+    <p class="short">Turning ideas into code — transforming concepts into features.</p>
+
+    <div class="team-expanded"></div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll(".team-card").forEach(card => {
+    const expanded = card.querySelector(".team-expanded");
+
+    // Build expanded content from dataset
+    expanded.innerHTML = `
+      <h4>${card.dataset.name}</h4>
+      <p class="role">${card.dataset.role}</p>
+
+      <h5>Bio</h5>
+      <p>${card.dataset.bio}</p>
+
+      <h5>Skills</h5>
+      <ul>
+        ${card.dataset.skills.split(",").map(s => `<li>${s.trim()}</li>`).join("")}
+      </ul>
+
+      <h5>Education</h5>
+      <p>${card.dataset.education}</p>
+
+      <h5>Contact</h5>
+      <p>Email: <a href="mailto:${card.dataset.email}">${card.dataset.email}</a></p>
+
+      <div class="team-socials-member">
+        ${Object.entries(JSON.parse(card.dataset.socials))
+          .map(([platform, url]) => 
+            `<a href="${url}" target="_blank"><i class="fab fa-${platform}"></i></a>`)
+          .join("")}
+      </div>
+    `;
+
+    card.addEventListener("click", e => {
+      e.stopPropagation(); // prevent document click from immediately collapsing
+
+      const isActive = card.classList.contains("active");
+
+      // Reset all cards
+      document.querySelectorAll(".team-card").forEach(c => {
+        c.classList.remove("active");
+        c.classList.remove("dim");
+      });
+
+      if (!isActive) {
+        // Activate clicked card
+        card.classList.add("active");
+
+        // Dim others
+        document.querySelectorAll(".team-card").forEach(c => {
+          if (c !== card) c.classList.add("dim");
+        });
+
+        // Auto scroll to expanded card
+        setTimeout(() => {
+          const y = card.getBoundingClientRect().top + window.scrollY - 140;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }, 100);
+      }
+    });
+  });
+
+  // Collapse when clicking anywhere outside
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".team-card").forEach(c => {
+      c.classList.remove("active", "dim");
+    });
+  });
+</script>
