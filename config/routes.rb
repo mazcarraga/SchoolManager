@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :departments
 
   get "about", to: "home#about_us"
+  get "curriculum_vitae_obias", to: "home#curriculum_vitae_obias"
+  get "curriculum_vitae_azcarraga", to: "home#curriculum_vitae_azcarraga"
+  get "curriculum_vitae_saturius", to: "home#curriculum_vitae_saturius"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
