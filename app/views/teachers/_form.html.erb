@@ -1,40 +1,31 @@
-<div class="n-wrapper">
- <div class="form-card">
-    <div class="card-header-solid">
-      <h2 class="mb-0"><%= teacher.new_record? ? "New Teacher" : "Edit Teacher" %></h5>
-    </div>
-
-    <div class="card-body">
-      <%= form_with(model: teacher, local: true) do |form| %>
-        <div class="mb-3">
-          <%= form.label :name, "Name" %>
-          <%= form.text_field :name, class: "form-control", placeholder: "Enter teacher name" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :email, "Email" %>
-          <%= form.text_field :email, class: "form-control", placeholder: "Enter email" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :specialization, "Specialization" %>
-          <%= form.text_field :specialization, class: "form-control", placeholder: "Enter specialization" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :status, "Status" %>
-          <%= form.text_field :status, class: "form-control", placeholder: "Enter status" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :department_id, "Department" %>
-          <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Select a department" }, class: "form-select" %>
-        </div>
-
-        <div class="text-end mt-4">
-          <%= form.submit teacher.new_record? ? "Save" : "Update", class: "btn-n btn-peach" %>
-        </div>
-      <% end %>
-    </div>
+<div class="form-card">
+  <div class="card-header-solid">
+    <h2><%= teacher.new_record? ? "Add Teacher" : "Update Teachers" %></h2>
   </div>
+
+  <%= form_with(model: teacher, local: true) do |form| %>
+    <div class="mb-4">
+      <%= form.label :name, class: "label" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "e.g. Jane Doe" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :email, class: "label" %>
+      <%= form.text_field :email, class: "form-control", placeholder: "e.g. jdoe@gbox.adnu.edu.ph" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :specialization, class: "label" %>
+      <%= form.text_field :specialization, class: "form-control", placeholder: "e.g. Software Development" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :status, class: "label" %>
+      <%= form.text_field :status, class: "form-control", placeholder: "e.g. Active" %>
+    </div>
+
+    <div class="text-end">
+      <%= form.submit teacher.new_record? ? "Save Teacher" : "Update Teacher", class: "btn-n btn-mint" %>
+    </div>
+  <% end %>
 </div>

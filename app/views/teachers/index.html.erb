@@ -1,10 +1,8 @@
 <div class="n-wrapper">
-  <h1 class="card-header-solid text-center bi bi-person-video3"> TEACHERS</h1>
-
-  <div class="n-card">
-    <div class="text-end mb-3">
-        <%= link_to "\tNew Teacher", new_teacher_path, class: " bi bi-person-add btn-n btn-mint btn-new" %>
-    </div>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="card-header-solid m-0">TEACHERS</h1>
+    <%= link_to "New Teacher", new_teacher_path, class: "btn-n btn-mint" %>
+  </div>
 
     <table class="n-table">
       <thead>
@@ -19,13 +17,17 @@
       <tbody>
         <% @teachers.each do |teacher| %>
           <tr>
-            <td><%= teacher.name %></td>
+            <td><strong><%= teacher.name %></td>
             <td><%= teacher.email %></td>
             <td><%= teacher.department.name %></td>
-            <td class="actions-cell text-center">
-              <%= link_to "Show", teacher, class: "btn-n btn-sky" %>
-              <%= link_to "Edit", edit_teacher_path(teacher), class: "btn-n btn-peach" %>
-              <%= link_to "Delete", teacher, class: "btn-n btn-pink" %>
+            <td class="d-flex gap-2 justify-content-center">
+              <%= link_to "View", teacher, class: "btn-n btn-sky", onclick: "event.stopPropagation();" %>
+              <%= link_to "Edit", edit_teacher_path(teacher), class: "btn-n btn-peach", onclick: "event.stopPropagation();" %>
+              <%= button_to "Delete", teacher, 
+                    method: :delete,
+                    form: { onsubmit: "event.stopPropagation();" },
+                    data: { confirm: "Are you sure?" },
+                    class: "btn-n btn-pink" %>
             </td>
           </tr>
         <% end %>

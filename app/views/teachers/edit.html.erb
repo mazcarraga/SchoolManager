@@ -1,10 +1,8 @@
-<% content_for :title, "Editing teacher" %>
-
-<%= render "form", teacher: @teacher %>
-
 <div class="n-wrapper">
-  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
-    <%= link_to "← Back to Teachers", teachers_path, class: "btn-n btn-grey" %>
-    <%= link_to "Show this Teacher", @teacher, class: "btn-n btn-sky" %>
+  <div class="mb-3">
+    <%= link_to "← Back", teachers_path, class: "btn-n btn-grey" %>
+    <%= link_to "View", @teacher, class: "btn-n btn-sky" %>
   </div>
+  
+  <%= render "form", teacher: @teacher %>
 </div>
