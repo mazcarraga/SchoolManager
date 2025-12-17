@@ -1,10 +1,8 @@
-<% content_for :title, "Editing student" %>
-
-<%= render "form", student: @student %>
-
 <div class="n-wrapper">
-  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
-    <%= link_to "← Back to Students", students_path, class: "btn-n btn-grey" %>
-    <%= link_to "Show this Student", @student, class: "btn-n btn-sky" %>
+  <div class="mb-3">
+    <%= link_to "← Back", students_path, class: "btn-n btn-grey" %>
+    <%= link_to "View", @student, class: "btn-n btn-sky" %>
   </div>
+  
+  <%= render "form", student: @student %>
 </div>

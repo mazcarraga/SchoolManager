@@ -1,14 +1,13 @@
 <div class="n-wrapper">
   <div class="n-card">
-    <div class="n-card-header fw-semibold text-dark">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h2 class="student-title"><%= @student.name %></h2>
-        <%= link_to "Edit Student", edit_student_path(@student), class: "btn-n btn-peach" %>
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <h1 class="mb-2 m-0"><%= @student.name %></h1>
+        <div class="n-meta text-muted" style="font-size:0.9rem; margin-bottom:12px;">
+          <%= @student.department.name %> Department &nbsp;| <%= @student.program %> &nbsp;|&nbsp; Year <%= @student.year_level %>
+        </div>
       </div>
-
-      <div class="n-meta text-muted" style="font-size:0.9rem; margin-bottom:12px;">
-        <%= @student.department.name %> Department &nbsp;| <%= @student.program %> &nbsp;|&nbsp; Year <%= @student.year_level %>
-      </div>
+      <%= link_to "Edit Details", edit_student_path(@student), class: "btn-n btn-peach" %> 
     </div>
 
     <div class="n-card-body">
@@ -21,36 +20,34 @@
     </div>
   </div>
 
-  <div class="n-card">
-    <h4 class="fw-semibold mb-3 bi bi-book-half" style="color: #333;"> SUBJECTS</h5>
-    <table class="n-subject-table">
-      <thead>
-        <tr>
-          <th>SUBJECT</th>
-          <th>SECTION</th>
-          <th>UNITS</th>
-          <th>TEACHER</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @student.classlists.each do |classlist| %>
+  <div class="n-card department-card">
+    <details>
+      <summary style="font-weight:600; font-size:1.2rem; ">SUBJECTS</summary>
+      <table class="n-table" style="margin-top:15px;">
+        <thead>
           <tr>
-            <td><%= classlist.section.subject.name %></td>
-            <td><%= classlist.section.name %></td>
-            <td><%= classlist.section.subject.number_of_units %></td>
-            <td><%= classlist.section.subject.teacher.name %></td>
+            <th>Subject</th>
+            <th>Section</th>
+            <th>Units</th>
+            <th>Teacher</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @student.classlists.each do |classlist| %>
+            <tr>
+              <td><strong><%= classlist.section.subject.name %></td>
+              <td><%= classlist.section.name %></td>
+              <td><%= classlist.section.subject.number_of_units %></td>
+              <td><%= classlist.section.subject.teacher.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </details>
   </div>
 
-  <div class="show-actions" style="display:flex; justify-content:space-between; margin-top:18px;">
+  <div class="d-flex justify-content-between align-items-center mt-4">
     <%= link_to "← Back to Students", students_path, class: "btn-n btn-grey" %>
-    <%= button_to "Delete Student", @student,
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete this student?" },
-        class: "btn-n btn-pink" %>
+    <%= button_to "Delete Student", @student, method: :delete, data: { confirm: "Are you sure?" }, class: "btn-n btn-pink" %>
   </div>
 </div>

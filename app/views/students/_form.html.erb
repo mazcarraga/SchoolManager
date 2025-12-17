@@ -1,35 +1,31 @@
-<div class="n-wrapper">
- <div class="student-card">
-    <div class="card-header-solid">
-      <h2 class="mb-0"><%= student.new_record? ? "New Student" : "Edit Student" %></h5>
-    </div>
-
-    <div class="card-body">
-      <%= form_with(model: student, local: true) do |form| %>
-        <div class="mb-3">
-          <%= form.label :name, "Name" %>
-          <%= form.text_field :name, class: "form-control", placeholder: "Enter student name" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :year_level, "Year level" %>
-          <%= form.number_field :year_level, class: "form-control", placeholder: "Enter year level", min: 1 %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :program, "Program" %>
-          <%= form.text_field :program, class: "form-control", placeholder: "Enter program/course" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :department_id, "Department" %>
-          <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Select a department" }, class: "form-select" %>
-        </div>
-
-        <div class="text-end mt-4">
-          <%= form.submit student.new_record? ? "Save" : "Update", class: "btn-n btn-peach" %>
-        </div>
-      <% end %>
-    </div>
+<div class="form-card">
+  <div class="card-header-solid">
+    <h2><%= student.new_record? ? "Add Student" : "Update Student" %></h2>
   </div>
+
+  <%= form_with(model: student, local: true) do |form| %>
+    <div class="mb-4">
+      <%= form.label :name, class: "label" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "e.g. Jane Doe" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :year_level, class: "label" %>
+      <%= form.text_field :year_level, class: "form-control", placeholder: "e.g. Enter Year Level", min: 1 %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :program, class: "label" %>
+      <%= form.text_field :program, class: "form-control", placeholder: "e.g. Computer Engineering" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :department_id, class: "label" %>
+      <%= form.collection_select :department_id, Department.all, :id, :name, { prompt: "Select a department" }, class: "form-select" %>
+    </div>
+
+    <div class="text-end">
+      <%= form.submit student.new_record? ? "Save Student" : "Update Student", class: "btn-n btn-mint" %>
+    </div>
+  <% end %>
 </div>
