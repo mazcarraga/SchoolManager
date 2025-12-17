@@ -1,27 +1,23 @@
 <div class="n-wrapper">
   <div class="n-card">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <h2 style="margin:0;"><%= @department.name %></h2>
-      <%= link_to "Edit Department", edit_department_path(@department), class: "btn-n btn-peach" %>
-    </div>
-
-    <div class="n-meta text-muted" style="font-size:0.9rem; margin-top:8px;">
-      <strong>Location:</strong> <%= @department.location %>
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <h1 class="mb-2 m-0"><%= @department.name %></h1>
+        <p class="text-muted">Location: <strong><%= @department.location %></strong></p>
+      </div>
+      <%= link_to "Edit Details", edit_department_path(@department), class: "btn-n btn-peach" %>
     </div>
   </div>
 
-  <div class="n-card">
+  <div class="n-card department-card">
     <details>
-      <summary class="bi bi-people-fill" style="cursor:pointer; font-weight:600; font-size:1.2rem; color:#333;">
-        STUDENTS
-      </summary>
-
+      <summary style="font-weight:600; font-size:1.2rem; ">STUDENTS</summary>
       <table class="n-table" style="margin-top:15px;">
         <thead>
           <tr>
             <th>Name</th>
             <th>Program</th>
-            <th>Year Level</th>
+            <th>Year</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +25,7 @@
             <tr>
               <td><%= student.name %></td>
               <td><%= student.program %></td>
-              <td style="text-align:center;"><%= student.year_level %></td>
+              <td><%= student.year_level %></td>
             </tr>
           <% end %>
         </tbody>
@@ -37,12 +33,9 @@
     </details>
   </div>
 
-  <div class="n-card">
+  <div class="n-card department-card">
     <details>
-      <summary class="bi bi-person-video3" style="cursor:pointer; font-weight:600; font-size:1.2rem; color:#333;">
-        TEACHERS
-      </summary>
-
+      <summary style="font-weight:600; font-size:1.2rem; ">TEACHERS</summary>
       <table class="n-table" style="margin-top:15px;">
         <thead>
           <tr>
@@ -66,12 +59,9 @@
     </details>
   </div>
 
-  <div class="n-card">
+  <div class="n-card department-card">
     <details>
-      <summary class="bi bi-person-badge-fill" style="cursor:pointer; font-weight:600; font-size:1.2rem; color:#333;">
-        STAFFS
-      </summary>
-
+      <summary style="font-weight:600; font-size:1.2rem; ">STAFFS</summary>
       <table class="n-table" style="margin-top:15px;">
         <thead>
           <tr>
@@ -95,12 +85,8 @@
     </details>
   </div>
 
-  <div class="show-actions" style="margin-top:18px;">
+  <div class="d-flex justify-content-between align-items-center mt-4">
     <%= link_to "← Back to Departments", departments_path, class: "btn-n btn-grey" %>
-
-    <%= button_to "Destroy Department", @department,
-          method: :delete,
-          data: { turbo_confirm: "Are you sure you want to delete this department?" },
-          class: "btn-n btn-pink" %>
+    <%= button_to "Delete Department", @department, method: :delete, data: { confirm: "Are you sure?" }, class: "btn-n btn-pink" %>
   </div>
 </div>

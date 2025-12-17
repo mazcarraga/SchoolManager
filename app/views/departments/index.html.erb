@@ -1,25 +1,18 @@
 <div class="n-wrapper">
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="card-header-solid m-0">
-      <i class="bi bi-building" style="margin-right:8px;"></i>
-      DEPARTMENTS
-    </h1>
-    <%= link_to "\tNew Department", new_department_path, class: "bi bi-plus btn-n btn-mint btn-new" %>
+    <h1 class="card-header-solid m-0">DEPARTMENTS</h1>
+    <%= link_to "New Department", new_department_path, class: "btn-n btn-mint" %>
   </div>
+
   <div class="row g-4">
     <% @departments.each do |department| %>
-      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="n-card department-card"
-             onclick="window.location='<%= department_path(department) %>'"
-             style="cursor: pointer; text-align:center; padding: 1.8rem;">
+      <div class="col-6 col-md-4 col-lg-3 col-xl-3">
+        <div class="n-card department-card" onclick="window.location='<%= department_path(department) %>'" style="cursor: pointer; text-align:center">
+          <h4 class="mb-1"><%= department.name %></h4>
+          <small class="text-muted mt-0">Department</small>
           
-          <div>
-            <h4 class="mb-0" style="font-weight:700; color: var(--navy); font-size:1.2rem;"><%= department.name %></h4>
-            <small class="text-muted mt-0">Department</small>
-          </div>
-
-          <div class="mt-3 d-flex justify-content-center gap-2">
-            <%= link_to "Show", department, class: "btn-n btn-sky", onclick: "event.stopPropagation();" %>
+          <div class="mt-3 d-flex gap-2 justify-content-center">
+            <%= link_to "View", department, class: "btn-n btn-sky", onclick: "event.stopPropagation();" %>
             <%= link_to "Edit", edit_department_path(department), class: "btn-n btn-peach", onclick: "event.stopPropagation();" %>
             <%= button_to "Delete", department, 
                   method: :delete,

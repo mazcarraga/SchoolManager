@@ -17,252 +17,119 @@
   --transition-speed: 0.3s;
 }
 
-/* GLOBAL BASE STYLING */
-body {
-  background:  var(--snow) !important;
-  font-family: 'Questrial', sans-serif;
-}
-
+/* Layout & Containers */
 .n-wrapper {
-  font-family: 'Questrial', sans-serif;
-  margin: auto;
-  padding: 30px;
+  max-width: 1500px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Georgia', sans-serif;
 }
 
-/* CONTAINERS / CARDS DESIGN */
-.n-card {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow);
-  border-radius: 16px;
-  padding: 1.5rem 1.5rem;
-  box-shadow:
-    6px 6px 12px rgba(0,0,0,0.08),
-    -6px -6px 12px rgba(255,255,255,0.9);
-  margin-bottom: 20px;
-}
-
-/* TABLE DESIGN */
-.n-table {
-  font-family: 'Questrial', sans-serif;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-}
-
-.n-table thead th {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow);
-  color: var(--navy);
-  font-weight: 1000;
-  /* padding: 10px; */
-  text-align: center;
-  letter-spacing: 0.5px;
-  box-shadow:
-    5px 5px 10px rgba(0,0,0,0.07),
-    -5px -5px 10px rgba(255,255,255,0.9);
-  /* border-radius: 12px; */
-   transition: 0.25s ease-in-out;
-}
-
-.n-table tbody tr {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow);
-  box-shadow:
-    5px 5px 10px rgba(0,0,0,0.07),
-    -5px -5px 10px rgba(255,255,255,0.9);
-  border-radius: 12px;
-  transition: 0.25s ease-in-out;
-}
-
-.n-table tbody tr:hover {
-  transform: translateY(-1px);
-}
-
-.n-table td {
-  padding: 14px;
-  vertical-align: middle;
-}
-
-/* BUTTONS DESIGN */
-.btn-n {
-  font-family: 'Questrial', sans-serif;
-  border-radius: 20px; 
-  border: none;
-  padding: 7px 14px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-decoration: none !important;
-  color: #333;
-  transition: 0.2s ease-in-out;
-  box-shadow:
-    4px 4px 8px rgba(0,0,0,0.12),
-    -4px -4px 8px rgba(255,255,255,0.9);
-}
-
-.btn-n:hover {font-family: 'Questrial', sans-serif;
-
-  transform: translateY(-1px);
-  box-shadow:
-    6px 6px 12px rgba(0,0,0,0.13),
-    -6px -6px 12px rgba(255,255,255,0.95);
-  filter: brightness(1.1);
-}
-
-.btn-n:active {
-  font-family: 'Questrial', sans-serif;
-  transform: translateY(0px);
-  box-shadow:
-    inset 4px 4px 8px rgba(0,0,0,0.15),
-    inset -4px -4px 8px rgba(255,255,255,0.9);
-}
-
-/* Accent button classes */
-.btn-pink  { background: var(--pink);  color: #333; }
-.btn-sky   { background: var(--sky);   color: #333; }
-.btn-peach { background: var(--peach); color: #333; }
-.btn-mint  { background: var(--mint);  color: #333; }
-.btn-grey  { background: var(--grey);  color: #333; }
-
-/* New Student button (slightly larger) */
-.btn-new {
-  font-family: 'Questrial', sans-serif;
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  border-radius: 20px;
-}
-
-/* SHOW PAGE: SUBJECT LIST TABLE */
-.n-subject-table {
-  font-family: 'Questrial', sans-serif;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  margin-top: 15px;
-}
-
-.n-subject-table thead th {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow);
-  color: var(--navy);
-  font-weight: 1000;
-  /* padding: 10px; */
-  text-align: center;
-  letter-spacing: 0.4px;
-  font-size: 1.1rem;
-  box-shadow:
-    5px 5px 10px rgba(0,0,0,0.07),
-    -5px -5px 10px rgba(255,255,255,0.9);
-  transition: 0.2s ease-in-out;
-}
-
-.n-subject-table tbody tr {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow);
-  box-shadow:
-    5px 5px 10px rgba(0,0,0,0.07),
-    -5px -5px 10px rgba(255,255,255,0.9);
-  border-radius: 12px;
-  transition: 0.2s ease-in-out;
-}
-
-.n-subject-table td {
-  font-family: 'Questrial', sans-serif;
-  padding: 10px;
-  vertical-align: middle;
-  font-size: 1rem;
-}
-
-/* TEXT ALIGNMENT */
-.n-subject-table tbody td:nth-child(3) {
-  text-align: center; 
-}
-
-.n-subject-table tbody tr:hover {
-  transform: translateY(-1px);
-}
-
-/* FORM */
-
-.student-card {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow); 
-  border-radius: 50px;
-  padding: 30px;
-  margin: auto;
-  box-shadow:
-    10px 10px 20px rgba(0,0,0,0.08),
-    -10px -10px 20px rgba(255,255,255,0.9);
-  max-width: 1400px;  
-}
-
-.form-card {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow); 
-  border-radius: 50px;
-  padding: 30px;
-  margin: auto;
-  box-shadow:
-    10px 10px 20px rgba(0,0,0,0.08),
-    -10px -10px 20px rgba(255,255,255,0.9);
-  max-width: 1400px;  
+/* Typography */
+h1, h2, h4 {
+  font-family: 'Georgia', serif;
+  color: #000000;
+  font-weight: 700;
 }
 
 .card-header-solid {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow); 
-  font-weight: 700;
-  color: var(--navy);
+  border-bottom: 3px solid #A41034;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+/* Component: Cards */
+.n-card {
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.department-card:hover {
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border-color: #A41034;
+}
+
+/* Component: Forms */
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #d9d9d9;
+  padding: 2rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #A41034;
+  box-shadow: 0 0 0 3px rgba(164, 16, 52, 0.1);
+}
+
+/* Component: Buttons */
+.btn-n {
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+  border-radius: 4px;
+}
+
+.btn-n:hover { opacity: 0.85; }
+.btn-peach { background-color: #fce4ec; color: #d81b60; } /* Edit */
+.btn-sky { background-color: #e3f2fd; color: #1976d2; }   /* Show */
+.btn-pink { background-color: #fff1f1; color: #A41034; }  /* Delete */
+.btn-mint { background-color: #A41034; color: white; }    /* New/Save */
+.btn-grey { background-color: #f5f5f5; color: #666; }     /* Back */
+
+/* Component: Tables */
+.n-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.n-table th {
+  background: #f8f9fa;
   text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  padding: 1rem;
+  border-bottom: 2px solid #d9d9d9;
 }
 
-.card-body {
-  font-family: 'Questrial', sans-serif;
+.n-table td {
+  padding: 0.5rem;
+  border-bottom: 0.5px solid #eee;
+}
+
+/* Collapsible Details */
+details summary {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  align-items: center;
+  gap: 10px;
 }
 
-.form-control, .form-select {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow) !important; 
-  border-radius: 20px !important;
-  padding: 0.55rem 1rem;
-  font-size: 0.95rem;
-  color: #60606483 !important;
-  box-shadow:
-    inset 4px 4px 8px rgba(0,0,0,0.06),
-    inset -4px -4px 8px rgba(255,255,255,0.9);
-  transition: 0.25s ease-in-out;
-}
-
-.form-control:focus, .form-select:focus {
-  font-family: 'Questrial', sans-serif;
-  background: var(--snow) !important;
-  color: #333 !important;
-  outline: none !important;
-  box-shadow:
-    inset 2px 2px 4px rgba(0,0,0,0.08),
-    inset -2px -2px 4px rgba(255,255,255,0.85),
-    4px 4px 8px rgba(0,0,0,0.06),
-    -4px -4px 8px rgba(255,255,255,0.9);
-  transition: 0.25s ease-in-out;
-}
-
-.show-actions {
-  font-family: 'Questrial', sans-serif;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  box-sizing: border-box;
-}
+details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 /*HOMEPAGE*/
 
 body {
  font-family: 'Questrial', sans-serif;
- color: white;
  margin: 0;
  padding: 0;
  overflow-y: auto;
@@ -690,6 +557,7 @@ body.scrolled .navbar-toggler {
 
 
 
+
 /* ABOUT PAGE */
 
 /* Hero Section */
@@ -885,4 +753,3 @@ body.scrolled .navbar-toggler {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
