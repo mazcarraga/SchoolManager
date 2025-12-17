@@ -1,25 +1,21 @@
-<div class="n-wrapper">
- <div class="form-card">
-    <div class="card-header-solid">
-      <h2 class="mb-0"><%= department.new_record? ? "New Department" : "Edit Department" %></h5>
-    </div>
-
-    <div class="card-body">
-      <%= form_with(model: department, local: true) do |form| %>
-        <div class="mb-3">
-          <%= form.label :name, "Name" %>
-          <%= form.text_field :name, class: "form-control", placeholder: "Enter department name" %>
-        </div>
-
-        <div class="mb-3">
-          <%= form.label :location, "Location" %>
-          <%= form.text_field :location, class: "form-control", placeholder: "Enter location" %>
-        </div>
-
-        <div class="text-end mt-4">
-          <%= form.submit department.new_record? ? "Save" : "Update", class: "btn-n btn-peach" %>
-        </div>
-      <% end %>
-    </div>
+<div class="form-card">
+  <div class="card-header-solid">
+    <h2><%= department.new_record? ? "Create Department" : "Update Department" %></h2>
   </div>
+
+  <%= form_with(model: department, local: true) do |form| %>
+    <div class="mb-4">
+      <%= form.label :name, class: "label" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "e.g. Computer Engineering" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :location, class: "label" %>
+      <%= form.text_field :location, class: "form-control", placeholder: "e.g. Main Campus, 3rd Floor" %>
+    </div>
+
+    <div class="text-end">
+      <%= form.submit department.new_record? ? "Save Department" : "Update Department", class: "btn-n btn-mint" %>
+    </div>
+  <% end %>
 </div>
