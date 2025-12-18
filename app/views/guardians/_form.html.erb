@@ -1,43 +1,42 @@
-<div class="n-wrapper">
-  <div class="student-card">
-    <div class="card-header-solid">
-      <h2 class="mb-0"><%= guardian.new_record? ? "ADDING NEW GUARDIAN" : "EDITING GUARDIAN" %></h2>
-    </div>
+<div class="edit-container">
+  <header class="page-header">
+    <h1><%= guardian.new_record? ? "NEW GUARDIAN MEMBER" : "EDIT GUARDIAN MEMBER" %></h1>
+    <p><%= guardian.new_record? ? "Personnel Registration" : "Update Personnel Record" %></p>
+  </header>
 
-    <div class="card-body">
-      <%= form_with(model: guardian, local: true) do |f| %>
-
-        <% if guardian.errors.any? %>
-          <div class="alert alert-danger">
-            <h5><%= pluralize(guardian.errors.count, "error") %> prohibited this guardian from being saved:</h5>
-            <ul>
-              <% guardian.errors.each do |error| %>
-                <li><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <div class="form-group">
-          <%= f.label :name, "Name", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
-          <%= f.text_field :name, class: "form-control" %>
+  <div class="form-card">
+    <h2 class="form-title"><%= guardian.new_record? ? "ADDING NEW GUARDIAN" : "EDITING GUARDIAN RECORD" %></h2>
+    
+    <%= form_with(model: guardian, local: true) do |f| %>
+      <% if guardian.errors.any? %>
+        <div class="alert alert-danger">
+          <ul>
+            <% guardian.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
         </div>
-
-        <div class="form-group">
-          <%= f.label :email_address, "Email Address", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
-          <%= f.email_field :email_address, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :contact_number, "Contact Number", style: "text-align: left; display: block; margin-top: 8px; margin-bottom: 8px;" %>
-          <%= f.text_field :contact_number, class: "form-control" %>
-        </div>
-
-        <div class="actions" style="margin-top: 20px;">
-          <%= f.submit class: "btn-n btn-mint" %>
-        </div>
-
       <% end %>
-    </div>
+
+      <div class="form-group">
+        <%= f.label :name, "Full Name" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email_address, "Email Address" %>
+        <%= f.email_field :email_address, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :contact_number, "Contact Number" %>
+        <%= f.text_field :contact_number, class: "form-control" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit guardian.new_record? ? "Create Guardian" : "Update Guardian Member", class: "btn-update" %>
+        <%= link_to "Cancel", guardians_path, class: "btn-cancel" %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,40 +1,40 @@
-<div class="n-wrapper">
+<div class="edit-container">
+  <div class="form-card">
+    <header class="show-header">
+      <h1 class="staff-name-display"><%= @staff.name %></h1>
+      <p class="staff-dept-display">
+        DEPARTMENT OF <%= @staff.department&.name&.upcase || "ASSIGNMENT PENDING" %>
+      </p>
+    </header>
 
-  <div class="n-card">
+    <hr class="show-divider">
 
-    <div class="n-card-header fw-semibold text-dark">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h2 class="staff-title"><%= @staff.name %></h2>
-        <%= link_to "Edit Staff", edit_staff_path(@staff), class: "btn-n btn-peach" %>
+    <div class="show-body">
+      <div class="info-row">
+        <span class="info-label">Email Address</span>
+        <span class="info-value"><%= @staff.email %></span>
+      </div>
+      
+      <div class="info-row">
+        <span class="info-label">Annual Salary</span>
+        <span class="info-value">₱<%= number_with_delimiter(number_with_precision(@staff.monthly_salary * 12, precision: 0)) %></span>
       </div>
 
-      <div class="n-meta text-muted" style="font-size:0.9rem; margin-bottom:12px;">
-        <% if @staff.department.present? %>
-          <%= @staff.department.name %> Department
-        <% else %>
-          No Department Assigned
-        <% end %>
+      <div class="info-row">
+        <span class="info-label">Employment Status</span>
+        <span class="info-value">
+          <span class="status-badge"><%= @staff.status.upcase %></span>
+        </span>
       </div>
     </div>
 
-    <div class="n-card-body">
-      <div style="display:flex; gap:24px; align-items:flex-start;">
-        <div style="flex:1; solid #ddd; padding-right:12px;">
-          <p style="margin:0 0 12px;"><strong>Email:</strong> <%= @staff.email %></p>
-          <p style="margin:0 0 12px;"><strong>Monthly Salary:</strong> ₱<%= number_with_precision(@staff.monthly_salary, precision: 2, delimiter: ',') %></p>
-          <p style="margin:0;"><strong>Status:</strong> <%= @staff.status %></p>
-        </div>
-      </div>
+    <div class="show-footer-actions">
+      <%= link_to "Edit Staff", edit_staff_path(@staff), class: "btn-update" %>
+      <%= link_to "Back to Directory", staffs_path, class: "btn-cancel" %>
+      <%= button_to "Delete Staff", @staff, method: :delete, 
+          form: { style: 'display:inline-block;' },
+          class: "btn-delete-text", 
+          data: { turbo_confirm: "Are you sure?" } %>
     </div>
-
   </div>
-
-  <div class="show-actions" style="display:flex; justify-content:space-between; margin-top:18px;">
-    <%= link_to "← Back to Staffs", staffs_path, class: "btn-n btn-grey" %>
-    <%= button_to "Delete", @staff,
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete this staff?" },
-        class: "btn-n btn-pink" %>
-  </div>
-
 </div>

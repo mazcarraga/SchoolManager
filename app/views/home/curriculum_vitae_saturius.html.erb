@@ -1,214 +1,242 @@
-<div class="cv-hero-section">
-  <div class="cv-hero-content">
-    <h1>Curriculum Vitae</h1>
-    <p class="cv-name">Ma. Willah Ederlyn M. Saturius</p>
-    <p class="cv-role">UI/UX Designer</p>
-    <a href="<%= about_path %>" class="sidebar-link icon-btn" aria-label="Back to Team">
-        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-        <span class="sr-only">Back to Team</span>
-    </a>
-  </div>
-</div>
-
-<div class="cv-container">
-  <div class="cv-content">
-    <!-- Header Section -->
-    <section class="cv-section">
-      <div class="cv-header">
-        <div class="cv-photo">
-          <%= image_tag "willah1.png", class: "cv-photo-img" %>
-        </div>
-        <div class="cv-header-info">
-          <h2>Ma. Willah Ederlyn M. Saturius</h2>
-          <p class="cv-title">UI/UX Designer</p>
-          <p class="cv-email">Email: <a href="mailto:iobias@gbox.adnu.edu.ph">msaturius@gbox.adnu.edu.ph</a></p>
-          <div class="cv-socials">
-            <a href="https://facebook.com/ederlyn.saturius.5" target="_blank" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="https://instagram.com/willahhhvyou" target="_blank" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://tiktok.com/@well_itsnotme" target="_blank" title="TikTok"><i class="fab fa-tiktok fa-lg"></i></a>
-            <a href="https://linkedin.com/in/ellah-mendez-167241285" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="https://github.com/wsaturius" target="_blank" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bio Section -->
-    <section class="cv-section">
-      <h3 class="cv-section-title">About</h3>
-      <p>Design-focused and detail-oriented UI/UX designer dedicated to creating clean, intuitive, and user-centered interfaces. I transform ideas into visually consistent designs that enhance usability and overall user experience.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="cv-section">
-      <h3 class="cv-section-title">Skills</h3>
-      <div class="cv-skills">
-        <div class="cv-skill-item">
-          <span class="cv-skill-name">Figma</span>
-        </div>
-        <div class="cv-skill-item">
-          <span class="cv-skill-name">Design Systems</span>
-        </div>
-        <div class="cv-skill-item">
-          <span class="cv-skill-name">User Research</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="cv-section">
-    <h3 class="cv-section-title">Education</h3>
-    <div class="accordion">
-
-        <!-- College -->
-        <div class="accordion-item">
-        <button class="accordion-header">
-            <span>Bachelor of Science in Computer Engineering</span>
-            <i class="fas fa-chevron-down chevron-icon"></i>
-        </button>
-        <div class="accordion-content">
-            <p class="cv-institution">Ateneo de Naga University</p>
-            <p class="cv-year">2023 - Present</p>
-            <p>Relevant coursework: Software Engineering, Databases, Web Development.</p>
-        </div>
-        </div>
-
-        <!-- Senior High School -->
-        <div class="accordion-item">
-        <button class="accordion-header">
-            <span>Senior High School – STEM Strand</span>
-            <i class="fas fa-chevron-down chevron-icon"></i>
-        </button>
-        <div class="accordion-content">
-            <p class="cv-institution">Dominican School of Calabanga</p>
-            <p class="cv-year">2021 - 2023</p>
-            <p>Strand: Science, Technology, Engineering, and Mathematics (STEM).</p>
-        </div>
-        </div>
-
-    </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="cv-section">
-      <h3 class="cv-section-title">Experience</h3>
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>UI/UX Designer — SchoolManager</span>
-            <i class="fas fa-chevron-down chevron-icon"></i>
-          </button>
-          <div class="accordion-content">
-            <p class="cv-company">SchoolManager Team</p>
-            <p class="cv-year">2025 - Present</p>
-            <p class="cv-description">Designing user-friendly interfaces for the SchoolManager project, creating wireframes, prototypes, and high-fidelity screens to enhance usability and visual consistency. Collaborating with the team to refine user flows, conduct user research, and ensure an intuitive overall experience.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- Sidebar -->
-  <aside class="cv-sidebar">
-    <div class="cv-sidebar-box">
-      <h4 class="cv-section-title">Quick Links</h4>
-      <ul>
-        <li>
-            <a href="<%= about_path %>" class="sidebar-link icon-btn" aria-label="Back to Team">
-                <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                <span>Back to Team</span>
-            </a>
-            </li>
-            <li>
-            <a href="<%= root_path %>" class="sidebar-link icon-btn" aria-label="Home">
-                <i class="fas fa-home" aria-hidden="true"></i>
-                <span>Home</span>
-            </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-</div>
-
 <style>
-  .icon-btn { display: inline-flex; align-items: center; gap: 8px; }
-  .icon-btn i { font-size: 1rem; line-height: 1; }
-  .sr-only {
-   position: absolute !important;
-   width: 1px; height: 1px;
-   padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
-   white-space: nowrap; border: 0;
-   }
-  .cv-content { color: #222; } /* ensure strong contrast on white card background */
+  :root {
+    --cv-red: #8d212d;
+    --cv-cream: #f9f4eb;
+    --cv-text: #333333;
+    --cv-white: #ffffff;
+  }
 
-  .cv-hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 48px 20px; text-align: center; margin-bottom: 32px; }
-  .cv-hero-content h1 { font-size: 2.2em; margin-bottom: 6px; color: #fff; }
-  .cv-name { color: #fff; font-weight: 600; margin-bottom: 2px; }
-  .cv-role { color: rgba(255,255,255,0.95); margin-bottom: 12px; }
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+  }
 
-  .back-button { display:inline-block; padding: 8px 14px; background: rgba(255,255,255,0.15); color: white; text-decoration: none; border-radius: 6px; border: 1px solid rgba(255,255,255,0.18); transition: all .22s ease; }
-  .back-button:hover { transform: translateX(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+  .cv-full-page {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+  }
 
-  .cv-container { display: grid; grid-template-columns: 1fr 300px; gap: 24px; max-width: 1100px; margin: 0 auto; padding: 0 18px 48px; }
-  .cv-content { background: #fff; border-radius: 8px; padding: 32px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+  .cv-sidebar {
+    background-color: var(--cv-red);
+    color: var(--cv-white);
+    width: 38%;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
 
-  .cv-section { margin-bottom: 28px; }
-  .cv-section-title { font-size: 1.25rem; color: var(--purple-dark); border-bottom: 2px solid rgba(102,126,234,0.12); padding-bottom: 8px; margin-bottom: 14px; }
+  .cv-main-content {
+    background-color: var(--cv-cream);
+    width: 62%;
+    padding: 100px 80px;
+    color: var(--cv-text);
+  }
 
-  .cv-header { display:flex; gap: 20px; align-items: center; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; margin-bottom: 20px; }
-  .cv-photo-img { width: 140px; height: 140px; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform .25s ease, box-shadow .25s ease; }
-  .cv-photo-img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+  .cv-indicator {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    display: block;
+  }
 
-  .cv-header-info h2 { margin: 0 0 6px 0; color: var(--purple-dark); font-size: 1.5rem; }
-  .cv-title { color: var(--purple-mid); margin-bottom: 8px; font-weight: 600; }
-  .cv-email a { color: var(--purple-dark); text-decoration: none; }
-  .cv-email a:hover { text-decoration: underline; color: var(--purple-mid); }
+  .cv-photo-large {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 10px solid rgba(255,255,255,0.1);
+    object-fit: cover;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+  }
 
-  .cv-skills { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 12px; }
-  .cv-skill-item { background:#f7f8fb; padding:12px; border-radius:6px; border-left: 4px solid var(--purple-mid); transition: transform .22s ease, box-shadow .22s ease; }
-  .cv-skill-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(111, 66, 193, 0.08); }
+  .cv-photo-large:hover {
+    transform: scale(1.02);
+  }
 
-  .accordion { display:flex; flex-direction: column; gap: 8px; }
-  .accordion-item { border: 1px solid #e6e6e9; border-radius:6px; overflow:hidden; background: #fff; }
-  .accordion-header { width:100%; padding: 14px 16px; background: #fbfbfd; border: none; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:600; color:#222; transition: background .18s ease, transform .18s ease; }
-  .accordion-header:hover { background: #f3f4fb; transform: translateX(4px); color: var(--purple-mid); }
-  .chevron-icon { transition: transform .25s ease; }
-  .accordion-content { max-height: 0; overflow:hidden; transition: max-height .28s ease, padding .2s ease; }
-  .accordion-item.active .accordion-content { max-height: 400px; padding: 14px 16px; border-top: 1px solid #eee; }
-  .accordion-item.active .chevron-icon { transform: rotate(180deg); }
+  .name-display {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
 
-  .cv-institution, .cv-company { color: var(--purple-dark); font-style: italic; font-weight: 600; margin-bottom: 6px; }
-  .cv-year { color: #888; font-size: .92rem; margin-bottom: 8px; }
-  .cv-description { color: #333; line-height: 1.6; }
+  .cv-nav-links {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
-  .cv-sidebar-box { padding: 16px; border-radius: 8px; background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-  .sidebar-link { color: var(--purple-dark); text-decoration: none; transition: transform .18s ease; display:inline-block; }
-  .sidebar-link:hover { transform: translateX(6px); color: var(--purple-mid); text-decoration: underline; }
+  .btn-nav {
+    color: var(--cv-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+  }
 
-  @media (max-width: 860px) {
-    .cv-container { grid-template-columns: 1fr; padding: 0 14px 36px; }
-    .cv-header { flex-direction: column; align-items: center; text-align: center; }
+  .btn-nav:hover {
+    background: var(--cv-white);
+    color: var(--cv-red);
+  }
+
+  .cv-section-title {
+    color: var(--cv-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid var(--cv-red);
+    margin-bottom: 40px;
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  .sidebar-header {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .contact-item {
+    text-align: left;
+    width: 100%;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .experience-item {
+    margin-bottom: 50px;
+  }
+
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  .date-text {
+    color: var(--cv-red);
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 1100px) {
+    .cv-full-page { flex-direction: column; }
+    .cv-sidebar, .cv-main-content { width: 100%; }
+    .cv-photo-large { width: 220px; height: 220px; }
+    .name-display { font-size: 2.8rem; }
   }
 </style>
 
-<script>
-  document.querySelectorAll('.accordion').forEach(accordion => {
-    accordion.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.closest('.accordion-item');
-        const isActive = item.classList.contains('active');
+<div class="cv-full-page">
+  <aside class="cv-sidebar">
+    <span class="cv-indicator">Curriculum Vitae</span>
+    
+    <div class="my-4">
+      <%= image_tag "willah1.png", class: "cv-photo-large shadow", alt: "Ma. Willah Ederlyn M. Saturius" %>
+      <h1 class="name-display text-white">WILLAH<br>SATURIUS</h1>
+      <p class="h5 fw-light text-white-50">UI/UX Designer</p>
+    </div>
 
-        // Close ALL items inside this accordion
-        accordion.querySelectorAll('.accordion-item').forEach(i => {
-          i.classList.remove('active');
-        });
+    <div class="w-100 px-lg-4">
+      <h5 class="sidebar-header">Contact</h5>
+      <div class="contact-item"><i class="fas fa-envelope me-3"></i> msaturius@gbox.adnu.edu.ph</div>
+      <div class="contact-item"><i class="fab fa-linkedin me-3"></i> linkedin.com/in/ellah-mendez</div>
+      <div class="contact-item"><i class="fab fa-github me-3"></i> github.com/wsaturius</div>
+    </div>
 
-        // Only open the clicked one if it was not already active
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-  });
-</script>
+    <div class="w-100 px-lg-4 mb-5">
+      <h5 class="sidebar-header">Technical</h5>
+      <div class="d-flex flex-wrap gap-2 pt-2">
+        <span class="badge border border-white rounded-0 px-3 py-2">Figma</span>
+        <span class="badge border border-white rounded-0 px-3 py-2">Ruby on Rails</span>
+        <span class="badge border border-white rounded-0 px-3 py-2">UI Research</span>
+      </div>
+    </div>
+
+    <nav class="cv-nav-links mt-auto">
+      <%= link_to root_path, class: "btn-nav" do %>
+        <i class="fas fa-home me-2"></i> Back to Home
+      <% end %>
+      <%= link_to about_path, class: "btn-nav" do %>
+        <i class="fas fa-users me-2"></i> Back to Team
+      <% end %>
+    </nav>
+  </aside>
+
+  <main class="cv-main-content">
+    <section class="experience-item">
+      <span class="cv-section-title">Professional Summary</span>
+      <p class="fs-4 lh-sm mb-4">
+        Detail-oriented UI/UX designer and Computer Engineering student dedicated to building high-fidelity, user-centered digital solutions.
+      </p>
+      <p class="text-muted fs-5">
+        Bridging technical implementation and aesthetic design at Ateneo de Naga University. Focused on clean interfaces and consistent design systems.
+      </p>
+    </section>
+
+    <section class="experience-item">
+      <span class="cv-section-title">Experience</span>
+      <div class="exp-meta">
+        <h4 class="fw-bold m-0">UI/UX Designer — SchoolManager</h4>
+        <span class="date-text">2025 - PRESENT</span>
+      </div>
+      <p class="fst-italic fs-5 text-secondary">SchoolManager Project Team</p>
+      <p class="text-muted">Leading the visual interface design and high-fidelity prototyping. Collaborating directly with development teams to maintain visual integrity across the application ecosystem.</p>
+    </section>
+
+    <section class="experience-item">
+      <span class="cv-section-title">Education</span>
+      <div class="mb-5">
+        <div class="exp-meta">
+          <h4 class="fw-bold m-0">Ateneo de Naga University</h4>
+          <span class="date-text">2023 - 2027</span>
+        </div>
+        <p class="fs-5">Bachelor of Science in Computer Engineering</p>
+        <p class="text-muted small">Relevant Coursework: Software Engineering, Web Development, Database Management.</p>
+      </div>
+
+      <div>
+        <div class="exp-meta">
+          <h4 class="fw-bold m-0">Dominican School of Calabanga</h4>
+          <span class="date-text">2021 - 2023</span>
+        </div>
+        <p class="fs-5">Senior High School – STEM Strand</p>
+      </div>
+    </section>
+
+    <section class="experience-item">
+      <span class="cv-section-title">Core Skills</span>
+      <div class="row g-5">
+        <div class="col-md-6">
+          <h5 class="fw-bold text-uppercase small letter-spacing-2 mb-3">Design Tools</h5>
+          <p class="text-muted">Figma, Adobe XD, Canva, Prototyping, Wireframing, Style Guides.</p>
+        </div>
+        <div class="col-md-6">
+          <h5 class="fw-bold text-uppercase small letter-spacing-2 mb-3">Technical</h5>
+          <p class="text-muted">HTML/CSS, JavaScript, Ruby on Rails, Git, Database Management.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
