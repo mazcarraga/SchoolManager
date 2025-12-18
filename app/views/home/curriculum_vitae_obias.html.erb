@@ -1,214 +1,582 @@
-<div class="cv-hero-section">
-  <div class="cv-hero-content">
-    <h1>Curriculum Vitae</h1>
-    <p class="cv-name">Ivan Obias</p>
-    <p class="cv-role">Project Lead</p>
-    <a href="<%= about_path %>" class="sidebar-link icon-btn" aria-label="Back to Team">
-        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-        <span class="sr-only">Back to Team</span>
-    </a>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan B. Obias - CV</title>
 
-<div class="cv-container">
-  <div class="cv-content">
-    <!-- Header Section -->
-    <section class="cv-section">
-      <div class="cv-header">
-        <div class="cv-photo">
-          <%= image_tag "ivan.jpg", class: "cv-photo-img" %>
-        </div>
-        <div class="cv-header-info">
-          <h2>Ivan Obias</h2>
-          <p class="cv-title">Project Lead</p>
-          <p class="cv-email">Email: <a href="mailto:iobias@gbox.adnu.edu.ph">iobias@gbox.adnu.edu.ph</a></p>
-          <div class="cv-socials">
-            <a href="https://facebook.com/notivanobias" target="_blank" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="https://instagram.com/vaaleriaaaan" target="_blank" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://tiktok.com/@ivanobias0" target="_blank" title="TikTok"><i class="fab fa-tiktok fa-lg"></i></a>
-            <a href="https://linkedin.com/in/ivan-b-obias-51ba9b347" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="https://github.com/iobias-dot" target="_blank" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Page-scoped visuals are now scoped under .cvpage-root to avoid bleed -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- Bio Section -->
-    <section class="cv-section">
-      <h3 class="cv-section-title">About</h3>
-      <p>Passionate about leading projects and creating impactful solutions. Driven by a commitment to excellence and team collaboration, with expertise in project management and strategic planning.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="cv-section">
-      <h3 class="cv-section-title">Skills</h3>
-      <div class="cv-skills">
-        <div class="cv-skill-item">
-          <span class="cv-skill-name">Project Management</span>
-        </div>
-        <div class="cv-skill-item">
-          <span class="cv-skill-name">UI/UX Strategy</span>
-        </div>
-        <div class="cv-skill-item">
-          <span class="cv-skill-name">Team Coordination</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="cv-section">
-    <h3 class="cv-section-title">Education</h3>
-    <div class="accordion">
-
-        <!-- College -->
-        <div class="accordion-item">
-        <button class="accordion-header">
-            <span>Bachelor of Science in Computer Engineering</span>
-            <i class="fas fa-chevron-down chevron-icon"></i>
-        </button>
-        <div class="accordion-content">
-            <p class="cv-institution">Ateneo de Naga University</p>
-            <p class="cv-year">2023 - Present</p>
-            <p>Relevant coursework: Software Engineering, Databases, Web Development.</p>
-        </div>
-        </div>
-
-        <!-- Senior High School -->
-        <div class="accordion-item">
-        <button class="accordion-header">
-            <span>Senior High School – STEM Strand</span>
-            <i class="fas fa-chevron-down chevron-icon"></i>
-        </button>
-        <div class="accordion-content">
-            <p class="cv-institution">Dominican School of Calabanga</p>
-            <p class="cv-year">2021 - 2023</p>
-            <p>Strand: Science, Technology, Engineering, and Mathematics (STEM).</p>
-        </div>
-        </div>
-
-    </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="cv-section">
-      <h3 class="cv-section-title">Experience</h3>
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header">
-            <span>Project Lead — SchoolManager</span>
-            <i class="fas fa-chevron-down chevron-icon"></i>
-          </button>
-          <div class="accordion-content">
-            <p class="cv-company">SchoolManager Team</p>
-            <p class="cv-year">2025 - Present</p>
-            <p class="cv-description">Leading the development and implementation of the SchoolManager project, coordinating team efforts and ensuring project success through effective planning and execution.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- Sidebar -->
-  <aside class="cv-sidebar">
-    <div class="cv-sidebar-box">
-      <h4 class="cv-section-title">Quick Links</h4>
-      <ul>
-        <li>
-            <a href="<%= about_path %>" class="sidebar-link icon-btn" aria-label="Back to Team">
-                <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                <span>Back to Team</span>
-            </a>
-            </li>
-            <li>
-            <a href="<%= root_path %>" class="sidebar-link icon-btn" aria-label="Home">
-                <i class="fas fa-home" aria-hidden="true"></i>
-                <span>Home</span>
-            </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-</div>
-
-<style>
-  .icon-btn { display: inline-flex; align-items: center; gap: 8px; }
-  .icon-btn i { font-size: 1rem; line-height: 1; }
-  .sr-only {
-   position: absolute !important;
-   width: 1px; height: 1px;
-   padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
-   white-space: nowrap; border: 0;
-   }
-  .cv-content { color: #222; } /* ensure strong contrast on white card background */
-
-  .cv-hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 48px 20px; text-align: center; margin-bottom: 32px; }
-  .cv-hero-content h1 { font-size: 2.2em; margin-bottom: 6px; color: #fff; }
-  .cv-name { color: #fff; font-weight: 600; margin-bottom: 2px; }
-  .cv-role { color: rgba(255,255,255,0.95); margin-bottom: 12px; }
-
-  .back-button { display:inline-block; padding: 8px 14px; background: rgba(255,255,255,0.15); color: white; text-decoration: none; border-radius: 6px; border: 1px solid rgba(255,255,255,0.18); transition: all .22s ease; }
-  .back-button:hover { transform: translateX(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
-
-  .cv-container { display: grid; grid-template-columns: 1fr 300px; gap: 24px; max-width: 1100px; margin: 0 auto; padding: 0 18px 48px; }
-  .cv-content { background: #fff; border-radius: 8px; padding: 32px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-
-  .cv-section { margin-bottom: 28px; }
-  .cv-section-title { font-size: 1.25rem; color: var(--purple-dark); border-bottom: 2px solid rgba(102,126,234,0.12); padding-bottom: 8px; margin-bottom: 14px; }
-
-  .cv-header { display:flex; gap: 20px; align-items: center; border-bottom: 1px solid #f0f0f0; padding-bottom: 20px; margin-bottom: 20px; }
-  .cv-photo-img { width: 140px; height: 140px; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform .25s ease, box-shadow .25s ease; }
-  .cv-photo-img:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-
-  .cv-header-info h2 { margin: 0 0 6px 0; color: var(--purple-dark); font-size: 1.5rem; }
-  .cv-title { color: var(--purple-mid); margin-bottom: 8px; font-weight: 600; }
-  .cv-email a { color: var(--purple-dark); text-decoration: none; }
-  .cv-email a:hover { text-decoration: underline; color: var(--purple-mid); }
-
-  .cv-skills { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 12px; }
-  .cv-skill-item { background:#f7f8fb; padding:12px; border-radius:6px; border-left: 4px solid var(--purple-mid); transition: transform .22s ease, box-shadow .22s ease; }
-  .cv-skill-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(111, 66, 193, 0.08); }
-
-  .accordion { display:flex; flex-direction: column; gap: 8px; }
-  .accordion-item { border: 1px solid #e6e6e9; border-radius:6px; overflow:hidden; background: #fff; }
-  .accordion-header { width:100%; padding: 14px 16px; background: #fbfbfd; border: none; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:600; color:#222; transition: background .18s ease, transform .18s ease; }
-  .accordion-header:hover { background: #f3f4fb; transform: translateX(4px); color: var(--purple-mid); }
-  .chevron-icon { transition: transform .25s ease; }
-  .accordion-content { max-height: 0; overflow:hidden; transition: max-height .28s ease, padding .2s ease; }
-  .accordion-item.active .accordion-content { max-height: 400px; padding: 14px 16px; border-top: 1px solid #eee; }
-  .accordion-item.active .chevron-icon { transform: rotate(180deg); }
-
-  .cv-institution, .cv-company { color: var(--purple-dark); font-style: italic; font-weight: 600; margin-bottom: 6px; }
-  .cv-year { color: #888; font-size: .92rem; margin-bottom: 8px; }
-  .cv-description { color: #333; line-height: 1.6; }
-
-  .cv-sidebar-box { padding: 16px; border-radius: 8px; background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-  .sidebar-link { color: var(--purple-dark); text-decoration: none; transition: transform .18s ease; display:inline-block; }
-  .sidebar-link:hover { transform: translateX(6px); color: var(--purple-mid); text-decoration: underline; }
-
-  @media (max-width: 860px) {
-    .cv-container { grid-template-columns: 1fr; padding: 0 14px 36px; }
-    .cv-header { flex-direction: column; align-items: center; text-align: center; }
-  }
-</style>
-
-<script>
-  document.querySelectorAll('.accordion').forEach(accordion => {
-    accordion.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.closest('.accordion-item');
-        const isActive = item.classList.contains('active');
-
-        // Close ALL items inside this accordion
-        accordion.querySelectorAll('.accordion-item').forEach(i => {
-          i.classList.remove('active');
-        });
-
-        // Only open the clicked one if it was not already active
-        if (!isActive) {
-          item.classList.add('active');
+        /* Scope page visuals to the cvpage-root wrapper to prevent global bleed */
+        .cvpage-root {
+            font-family: 'Roboto', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+            color: #00ffff;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
-      });
-    });
-  });
-</script>
+
+        /* subtle animated grid overlay, scoped */
+        .cvpage-root::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+            animation: cvpage-gridScroll 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes cvpage-gridScroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .cvpage-root::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* keep container and page elements above overlays */
+        .cvpage-root .container { position: relative; z-index: 1; }
+
+        /* Visual components scoped under .cvpage-root (no bare element selectors that affect other pages) */
+        .cvpage-root .header {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff00ff;
+            border-radius: 0;
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.3),
+                        inset 0 0 30px rgba(255, 0, 255, 0.1);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .cvpage-root .photo-container {
+            width: 180px;
+            height: 180px;
+            border: 3px solid #00ffff;
+            background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .cvpage-root .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cvpage-root .header-content { flex: 1; }
+
+        .cvpage-root h1 {
+            font-size: 48px;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            margin-bottom: 10px;
+            animation: cvpage-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes cvpage-glow {
+            from { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+            to { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
+        }
+
+        .cvpage-root .title {
+            font-size: 24px;
+            color: #ff00ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .cvpage-root .location { color: #ffff00; margin-bottom: 20px; }
+
+        .cvpage-root .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .cvpage-root .contact-item {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .cvpage-root .contact-item:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            transform: translateX(5px);
+        }
+
+        .cvpage-root .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .cvpage-root @media (max-width: 968px) {
+            /* (kept for clarity) mobile handled further below */
+        }
+
+        .cvpage-root .section {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #00ffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .cvpage-root .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+
+        .cvpage-root .section.alt {
+            border-left-color: #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+        }
+
+        .cvpage-root .section.alt::before {
+            background: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        .cvpage-root h2 {
+            font-size: 28px;
+            color: #ff00ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff00ff;
+            border-bottom: 2px solid #ff00ff;
+            padding-bottom: 10px;
+        }
+
+        .cvpage-root .section.alt h2 {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            border-bottom-color: #00ffff;
+        }
+
+        .cvpage-root h3 {
+            font-size: 20px;
+            color: #ffff00;
+            margin-bottom: 5px;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        .cvpage-root h4 {
+            font-size: 18px;
+            color: #00ffff;
+            margin: 15px 0 10px 0;
+        }
+
+        .cvpage-root p, .cvpage-root li {
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+
+        .cvpage-root .section-content { margin-top: 15px; }
+
+        .cvpage-root .job-entry, .cvpage-root .education-entry, .cvpage-root .project-entry {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 2px solid rgba(255, 255, 0, 0.3);
+        }
+
+        .cvpage-root .date { color: #ff00ff; font-size: 14px; font-style: italic; }
+        .cvpage-root .company { color: #00ffff; font-size: 16px; }
+
+        .cvpage-root ul { list-style: none; padding-left: 0; }
+        .cvpage-root ul li { padding-left: 20px; position: relative; margin-bottom: 8px; }
+        .cvpage-root ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #00ffff;
+            font-size: 18px;
+        }
+
+        .cvpage-root .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .cvpage-root .skill-tag {
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.3) 0%, rgba(0, 255, 255, 0.3) 100%);
+            border: 1px solid #00ffff;
+            padding: 8px 16px;
+            color: #00ffff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .cvpage-root .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.5) 0%, rgba(0, 255, 255, 0.5) 100%);
+        }
+
+        .cvpage-root .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+        .cvpage-root .tech-tag { background: rgba(255, 255, 0, 0.2); border: 1px solid #ffff00; padding: 4px 10px; font-size: 12px; color: #ffff00; text-transform: uppercase; }
+
+        .cvpage-root .honors-list li { background: rgba(255, 0, 255, 0.1); padding: 10px; margin-bottom: 8px; border-left: 3px solid #ff00ff; }
+        .cvpage-root .honors-list li::before { content: '★'; color: #ffff00; }
+
+        .cvpage-root .sidebar-section {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #ff00ff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+
+        .cvpage-root .sidebar-section h2 {
+            font-size: 20px;
+            color: #00ffff;
+            border-bottom: 2px solid #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .cvpage-root .corner-glow { position: fixed; width: 200px; height: 200px; border-radius: 50%; filter: blur(80px); opacity: 0.3; z-index: 0; animation: cvpage-pulse 4s ease-in-out infinite; pointer-events: none; }
+        .cvpage-root .corner-glow.top-left { top: -100px; left: -100px; background: #ff00ff; }
+        .cvpage-root .corner-glow.top-right { top: -100px; right: -100px; background: #00ffff; animation-delay: 2s; }
+        .cvpage-root .corner-glow.bottom-left { bottom: -100px; left: -100px; background: #ffff00; animation-delay: 1s; }
+        .cvpage-root .corner-glow.bottom-right { bottom: -100px; right: -100px; background: #ff00ff; animation-delay: 3s; }
+
+        @keyframes cvpage-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+
+        /* small helpers */
+        .cvpage-root .icon-btn { display: inline-flex; align-items: center; gap: 8px; }
+        .cvpage-root .icon-btn i { font-size: 1rem; line-height: 1; }
+        .cvpage-root .sr-only, .cvpage-root .visually-hidden {
+            position: absolute !important; width: 1px; height: 1px;
+            padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+            white-space: nowrap; border: 0;
+        }
+
+        /* layout specifics */
+        .cvpage-root .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+        .cvpage-root .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+
+        @media (max-width: 968px) {
+            .cvpage-root .header { grid-template-columns: 1fr; text-align: center; }
+            .cvpage-root .photo-container { margin: 0 auto; }
+            .cvpage-root .main-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Ensure any accordion styles are contained */
+        .cvpage-root .accordion { display:flex; flex-direction: column; gap: 10px; }
+        .cvpage-root .accordion-item { border: 2px solid #111; border-radius: 0; box-shadow: 6px 6px 0 #111; overflow: hidden; background: #fff; }
+        .cvpage-root .accordion-header { width:100%; padding: 14px 16px; background:#fff; border: none; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:700; color:#111; transition: background .15s ease; }
+        .cvpage-root .accordion-header:hover { background: var(--paper, #f6f4ef); }
+        .cvpage-root .chevron-icon { transition: transform .28s ease; }
+        .cvpage-root .accordion-content { max-height: 0; overflow: hidden; transition: max-height .32s ease, padding .22s ease; }
+        .cvpage-root .accordion-item.active .accordion-content { max-height: 480px; padding: 14px 16px; border-top: 1px solid #eee; }
+        .cvpage-root .accordion-item.active .chevron-icon { transform: rotate(180deg); }
+
+        /* Sidebar link helper */
+        .cvpage-root .sidebar-link { font-weight: 700; color: #111; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .cvpage-root .sidebar-link:hover { color: #d6453d; transform: translateX(6px); text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <!-- Wrap page content in cvpage-root to scope styles and scripts -->
+    <div class="cvpage-root">
+      <!-- Glowing corners -->
+      <div class="corner-glow top-left"></div>
+      <div class="corner-glow top-right"></div>
+      <div class="corner-glow bottom-left"></div>
+      <div class="corner-glow bottom-right"></div>
+
+      <div class="container">
+          <!-- Header -->
+          <header class="header">
+              <div class="photo-container">
+                  <%= image_tag "ivan.jpg", alt: "Ivan B. Obias", class: "photo-container-img" %>
+              </div>
+              <div class="header-content">
+                  <h1>Ivan B. Obias</h1>
+                  <div class="title">Computer Engineering</div>
+                  <div class="location">📍 Calabanga, Camarines Sur, Philippines</div>
+
+                  <div class="contact-grid">
+                      <a href="mailto:iobias@gbox.adnu.edu.ph" class="contact-item">📧 iobias@gbox.adnu.edu.ph</a>
+                      <a href="tel:9993452115" class="contact-item">📞 9993452115</a>
+                      <a href="https://github.com/iobias-dot" target="_blank" class="contact-item">💻 GitHub Profile</a>
+                      <a href="https://www.linkedin.com/in/ivan-b-obias-51ba9b347/" target="_blank" class="contact-item">🔗 LinkedIn Profile</a>
+                  </div>
+              </div>
+          </header>
+
+          <!-- Main Grid -->
+          <div class="main-grid">
+              <!-- Main Content -->
+              <div>
+                  <!-- Professional Summary -->
+                  <section class="section">
+                      <h2>Professional Summary</h2>
+                      <div class="section-content">
+                          <p>Computer Engineering student with experience in software development, electronics fundamentals, and system-level problem solving. Possesses a strong foundation in programming, digital logic, and collaborative project work, with leadership experience in technical and editorial organizations. Oriented toward entry-level engineering, trainee, or internship roles requiring adaptability and solid technical fundamentals.</p>
+                      </div>
+                  </section>
+
+                  <!-- Education -->
+                  <section class="section alt">
+                      <h2>Education</h2>
+                      <div class="section-content">
+                          <div class="education-entry">
+                              <h3>Bachelor of Science in Computer Engineering</h3>
+                              <p class="company">Ateneo de Naga University</p>
+                              <p class="date">August 2023 – May 2027 (Expected)</p>
+
+                              <h4>Honors and Scholarships</h4>
+                              <ul class="honors-list">
+                                  <li>DOST Undergraduate Scholarship</li>
+                                  <li>Senior High School Rank 1 Scholarship (University-Funded)</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </section>
+
+                  <!-- Engineering Projects -->
+                  <section class="section">
+                      <h2>Engineering Projects</h2>
+                      <div class="section-content">
+                          <div class="project-entry">
+                              <h3>Power Supply Design and Fabrication</h3>
+                              <div class="tech-tags">
+                                  <span class="tech-tag">Discrete electronic components</span>
+                                  <span class="tech-tag">Schematic design</span>
+                                  <span class="tech-tag">Hardware testing</span>
+                              </div>
+                              <ul>
+                                  <li>Designed and assembled a regulated power supply circuit for laboratory and prototyping use</li>
+                                  <li>Performed component selection, circuit assembly, and functional testing to ensure stable voltage output</li>
+                              </ul>
+                          </div>
+
+                          <div class="project-entry">
+                              <h3>Online School Manager Web Application</h3>
+                              <div class="tech-tags">
+                                  <span class="tech-tag">Ruby on Rails</span>
+                                  <span class="tech-tag">CSS</span>
+                                  <span class="tech-tag">Database-backed web architecture</span>
+                              </div>
+                              <ul>
+                                  <li>Developed a web-based school management system for handling academic records and user information</li>
+                                  <li>Implemented backend logic and frontend interfaces with emphasis on data organization and usability</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </section>
+
+                  <!-- Leadership and Technical Service -->
+                  <section class="section alt">
+                      <h2>Leadership and Technical Service</h2>
+                      <div class="section-content">
+                          <div class="job-entry">
+                              <h3>Year-Level Representative</h3>
+                              <p class="company">Computer Engineering Society</p>
+                              <p class="date">August 2023 – May 2025</p>
+                              <ul>
+                                  <li>Coordinated communication between student body and organization officers</li>
+                                  <li>Assisted in planning and execution of academic and technical activities</li>
+                              </ul>
+                          </div>
+
+                          <div class="job-entry">
+                              <h3>Editor-in-Chief</h3>
+                              <p class="company">ThePILLARS Publication</p>
+                              <p class="date">June 2025 – June 2026</p>
+                              <ul>
+                                  <li>Led editorial operations, supervised contributors, and managed publication workflows</li>
+                              </ul>
+                          </div>
+
+                          <div class="job-entry">
+                              <h3>News Editor</h3>
+                              <p class="company">ThePILLARS Publication</p>
+                              <p class="date">February 2024 – May 2025</p>
+                              <ul>
+                                  <li>Oversaw news content production, editing, and deadline coordination</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+
+              <!-- Sidebar -->
+              <div>
+                  <!-- Programming Languages -->
+                  <div class="sidebar-section">
+                      <h2>Programming Languages</h2>
+                      <div class="skills-container">
+                          <span class="skill-tag">C++</span>
+                          <span class="skill-tag">Python</span>
+                          <span class="skill-tag">Java</span>
+                          <span class="skill-tag">Ruby</span>
+                          <span class="skill-tag">Ruby on Rails</span>
+                          <span class="skill-tag">CSS</span>
+                      </div>
+                  </div>
+
+                  <!-- Hardware / Systems -->
+                  <div class="sidebar-section">
+                      <h2>Hardware / Systems</h2>
+                      <div class="skills-container">
+                          <span class="skill-tag">Digital Logic</span>
+                          <span class="skill-tag">Circuit Analysis</span>
+                          <span class="skill-tag">Electronics Etching</span>
+                          <span class="skill-tag">Power Supply</span>
+                          <span class="skill-tag">Prototyping</span>
+                      </div>
+                  </div>
+
+                  <!-- Software & Tools -->
+                  <div class="sidebar-section">
+                      <h2>Software & Tools</h2>
+                      <div class="skills-container">
+                          <span class="skill-tag">Git/GitHub</span>
+                          <span class="skill-tag">AutoCAD</span>
+                          <span class="skill-tag">Eagle</span>
+                          <span class="skill-tag">TinkerCAD</span>
+                          <span class="skill-tag">DigitAL</span>
+                      </div>
+                  </div>
+
+                  <!-- Operating Systems -->
+                  <div class="sidebar-section">
+                      <h2>Operating Systems</h2>
+                      <div class="skills-container">
+                          <span class="skill-tag">Windows</span>
+                          <span class="skill-tag">Linux</span>
+                          <span class="skill-tag">macOS</span>
+                      </div>
+                  </div>
+
+                  <!-- Certifications -->
+                  <div class="sidebar-section">
+                      <h2>Certifications</h2>
+                      <div class="section-content">
+                          <ul>
+                              <li>University-level laboratory and coursework training in computer engineering fundamentals</li>
+                              <li>Practical exposure to electronics fabrication, digital systems, and software development</li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <!-- Affiliations -->
+                  <div class="sidebar-section">
+                      <h2>Affiliations</h2>
+                      <div class="section-content">
+                          <p>Member, Computer Engineering Society, Ateneo de Naga University</p>
+                          <p>Member, ThePILLARS Publication, Ateneo de Naga University</p>
+                          <p>Member, Institute of Computer Engineers of the Philippines-Student Edition Bicol Chapter (ICpEP-SE Bicol Chapter)</p>
+                      </div>
+                  </div>
+
+                  <!-- References -->
+                  <div class="sidebar-section">
+                      <h2>References</h2>
+                      <div class="section-content">
+                          <p>Available upon request</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Scoped accordion script: operates only inside .cvpage-root -->
+    <script>
+      (function () {
+        const root = document.querySelector('.cvpage-root');
+        if (!root) return;
+
+        root.querySelectorAll('.accordion').forEach((accordion) => {
+          accordion.querySelectorAll('.accordion-header').forEach((header) => {
+            header.addEventListener('click', () => {
+              const item = header.closest('.accordion-item');
+              const content = item.querySelector('.accordion-content');
+              const isActive = item.classList.contains('active');
+
+              // Close siblings inside this accordion group only
+              accordion.querySelectorAll('.accordion-item').forEach(sib => {
+                sib.classList.remove('active');
+                const sibBtn = sib.querySelector('.accordion-header');
+                const sibContent = sib.querySelector('.accordion-content');
+                if (sibBtn) sibBtn.setAttribute('aria-expanded', 'false');
+                if (sibContent) sibContent.setAttribute('aria-hidden', 'true');
+              });
+
+              // Toggle clicked
+              if (!isActive) {
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+                if (content) content.setAttribute('aria-hidden', 'false');
+              } else {
+                item.classList.remove('active');
+                header.setAttribute('aria-expanded', 'false');
+                if (content) content.setAttribute('aria-hidden', 'true');
+              }
+            });
+          });
+        });
+      })();
+    </script>
+</body>
+</html>
