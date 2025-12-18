@@ -136,61 +136,71 @@
 </script>
 
     <!-- Footer -->
-    <footer class="mt-5 pt-4 pb-3 text-white" style="background-color: #4e0c88">
-      <div class="container">
+      <footer class="site-footer mt-5">
+        <div class="container py-5">
+          <div class="row gy-4 align-items-start">
 
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="d-flex align-items-center mb-2">
-              <%= image_tag "logo_white.png", alt: "MWI Logo", class: "navbar-logo"%>
-              <h5 class="fw-bold mb-0">MWI University</h5>
+            <!-- Brand -->
+            <div class="col-md-4">
+              <h4 class="footer-brand mb-2">
+                <%= image_tag "logo_white.png", alt: "MWI Logo", class: "navbar-logo"%>
+                MWI University
+              </h4>
+              <p class="footer-tagline mb-0">
+                Excellence in Education Since 1890
+              </p>
             </div>
-            <p class="small mb-0">
-              Committed to excellence in education, research, and community service.
+
+            <!-- Academics -->
+            <div class="col-md-2">
+              <h6 class="footer-heading">Academics</h6>
+              <ul class="list-unstyled footer-list">
+                <li><a href="#">Undergraduate</a></li>
+                <li><a href="#">Graduate</a></li>
+                <li><a href="#">Online Programs</a></li>
+                <li><a href="#">Summer Sessions</a></li>
+              </ul>
+            </div>
+
+            <!-- Admissions -->
+            <div class="col-md-3">
+              <h6 class="footer-heading">Admissions</h6>
+              <ul class="list-unstyled footer-list">
+                <li><a href="#">Apply Now</a></li>
+                <li><a href="#">Visit Campus</a></li>
+                <li><a href="#">Financial Aid</a></li>
+                <li><a href="#">International Students</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-3">
+              <h6 class="footer-heading">Contact</h6>
+              <p class="footer-text mb-2">
+                1 University Drive<br>
+                Cambridge, MA 02138
+              </p>
+              <p class="footer-text mb-0">
+                <a href="mailto:admissions@mwi.edu">admissions@mwi.edu</a><br>
+                (617) 555-0100
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <div class="container text-center py-3">
+            <p class="mb-0">
+              © 2025 MWI University. All rights reserved.
+              <span class="mx-2">|</span>
+              <a href="#">Privacy Policy</a>
+              <span class="mx-2">|</span>
+              <a href="#">Terms of Use</a>
             </p>
           </div>
-
-          <div class="col-md-2 mb-3">
-            <h6 class="fw-semibold">Admission</h6>
-            <ul class="list-unstyled small">
-              <li><%= link_to "Departments", departments_path, class: "text-white text-decoration-none" %></li>
-              <li><%= link_to "Teachers", teachers_path, class: "text-white text-decoration-none" %></li>
-              <li><%= link_to "Students", students_path, class: "text-white text-decoration-none" %></li>
-              <li><%= link_to "Guardians", guardians_path, class: "text-white text-decoration-none" %></li>
-            </ul>
-          </div>
-
-          <div class="col-md-2 mb-3">
-            <h6 class="fw-semibold">Academics</h6>
-            <ul class="list-unstyled small">
-              <li><%= link_to "Sections", sections_path, class: "text-white text-decoration-none" %></li>
-              <li><%= link_to "Subjects", subjects_path, class: "text-white text-decoration-none" %></li>
-              <li><%= link_to "Classlists", classlists_path, class: "text-white text-decoration-none" %></li>
-            </ul>
-          </div>
-
-          <div class="col-md-2 mb-3">
-            <h6 class="fw-semibold">More</h6>
-            <ul class="list-unstyled small">
-              <li><%= link_to "Staffs", staffs_path, class: "text-white text-decoration-none" %></li>
-            </ul>
-          </div>
-
-          <div class="col-md-2 mb-3">
-            <h6 class="fw-semibold">Connect</h6>
-            <ul class="list-unstyled small">
-              <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Facebook</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Twitter</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Instagram</a></li>
-            </ul>
-          </div>
         </div>
-
-        <div class="text-center pt-3 border-top border-secondary small">
-          © <%= Time.zone.now.year %> MWI University. All rights reserved.
-        </div>
-      </div>
     </footer>
   </body>
 </html>

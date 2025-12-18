@@ -1437,3 +1437,65 @@ body.scrolled .navbar-toggler {
   .cv-bento-grid { grid-template-columns: 1fr; }
   .about-card, .biography-card, .education-grid, .skills-grid, .experience-grid, .project-grid, .language-grid, .hobbies-grid { grid-column: span 1; }
 }
+
+/* =========================
+   SITE FOOTER
+   ========================= */
+
+.site-footer {
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+}
+
+.footer-brand {
+  color: var(--harvard-red);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.footer-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-list a,
+.footer-text,
+.footer-text a {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover,
+.footer-text a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
