@@ -518,6 +518,8 @@ function togglePrograms(element) {
  const grid = element.querySelector('.program-grid-container');
  const isAlreadyOpen = grid.style.display === "block";
 
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
  // Close all other colleges first
  document.querySelectorAll('.program-grid-container').forEach(container => {
@@ -539,7 +541,3 @@ window.addEventListener('load', () => {
  document.body.classList.remove('fade-in');
 });
 </script>
-
-<!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-

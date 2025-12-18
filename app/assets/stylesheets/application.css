@@ -215,8 +215,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  padding-bottom: 100px;
 }
 
-
-/* Left-aligned title */
 #whySection .why-title {
  text-align: left;                    
  font-weight: normal;                  
@@ -227,11 +225,9 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  border-bottom: 4px solid var(--harvard-red);
 }
 
-
-/* Adjust the underline width to match reasons row */
 #whySection .why-title {
  border-bottom-width: 6px;
- width: 1250px; /* match reason-row width */
+ width: 1250px; 
  box-sizing: border-box;
 }
 /* Make icons circular and uniform */
@@ -293,7 +289,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 }
 
 
-/* Updated Header to match Events style exactly */
 .numbers-header-v2 {
  border-bottom: 2px solid #000000;
  margin-bottom: 60px;
@@ -311,20 +306,16 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  color: #000000;
 }
 
-
-/* Bigger Card Styling */
 .number-card {
  background-color: #ffffff;
  border: 1px solid #e0e0e0;
- padding: 60px 30px; /* Significantly increased padding for size */
+ padding: 60px 30px; 
  height: 100%;
  text-align: center;
  transition: transform 0.4s ease, box-shadow 0.4s ease;
  cursor: default;
 }
 
-
-/* Hover effect to match your other cards */
 .number-card:hover {
  transform: translateY(-10px);
  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
@@ -334,15 +325,15 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 .number-card h3 {
  color: var(--harvard-red);
- font-size: 3.5rem; /* Massive font size for the number */
+ font-size: 3.5rem; 
  font-weight: 700;
  margin-bottom: 15px;
- font-family: serif; /* Serif for a more academic look */
+ font-family: serif;
 }
 
 
 .number-card p {
- font-size: 1rem; /* Slightly larger text */
+ font-size: 1rem; 
  letter-spacing: 2px;
  text-transform: uppercase;
  color: #333;
@@ -360,7 +351,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 }
 
 
-/* Header style matching Upcoming Events */
 .dept-header-v2 {
  border-bottom: 2px solid #000000;
  margin-bottom: 60px;
@@ -398,8 +388,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 .dept-list-col { flex: 0 0 60%; }
 .dept-carousel-col { flex: 0 0 35%; }
 
-
-/* College List with Fixed Underline */
 .college-list { list-style: none; padding: 0; }
 
 
@@ -414,21 +402,17 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  font-size: 1.4rem;
  padding: 20px 0;
  color: #000000;
- border-bottom: 1px solid #333; /* Fixed underline */
+ border-bottom: 1px solid #333; 
  transition: all 0.3s ease;
 }
 
-
-/* Hover: Red color + Dotted Underline */
 .college-item:hover .college-name {
  color: var(--harvard-red, #A51C30);
  border-bottom: 2px dotted var(--harvard-red, #A51C30);
 }
 
-
-/* Program Grid (Hidden by default) */
 .program-grid-container {
- display: none; /* Revealed by JS */
+ display: none;
  padding: 30px 0;
  background-color: #fdfdfd;
 }
@@ -436,7 +420,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 .program-grid-list {
  display: grid;
- grid-template-columns: 1fr 1fr; /* Two columns as per reference image */
+ grid-template-columns: 1fr 1fr; 
  gap: 15px 30px;
  list-style: none;
  padding: 0;
@@ -444,7 +428,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 
 .program-grid-list li {
- background-color: #f1f1f1; /* Light box style from reference image */
+ background-color: #f1f1f1; 
  padding: 15px;
  font-size: 0.9rem;
  color: #444;
@@ -489,24 +473,22 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 #campusSection {
  min-height: 100vh;
- background-color: #F8F9FA; /* Light gray background */
+ background-color: #F8F9FA; 
  padding-top: 150px;
  padding-bottom: 100px;
  text-align: center;
 }
 
-
-/* Title style: Left-aligned, Black text, Red bottom border */
 #campusSection .campus-title {
- color: #000000;              /* Black title as requested */
+ color: #000000;             
  text-align: left;
  font-weight: normal;
  font-size: 4rem;
  margin-bottom: 100px;
  padding-bottom: 10px;
  display: inline-block;
- border-bottom: 6px solid var(--harvard-red); /* Thick red underline */
- width: 1250px;               /* Matches the width of the image row */
+ border-bottom: 6px solid var(--harvard-red);
+ width: 1250px;               
  box-sizing: border-box;
 }
 
@@ -533,10 +515,10 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 /* Corrected Image Styling */
 .campus-card img {
- width: 100%;                 /* Takes up full width of the card */
- height: 100%;                /* Takes up full height of the card */
- object-fit: cover;           /* Essential: Fills the box without stretching */
- display: block;              /* Removes bottom whitespace gap */
+ width: 100%;                
+ height: 100%;                
+ object-fit: cover;           
+ display: block;             
 }
 
 
@@ -553,28 +535,28 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 /* Responsive adjustment for smaller screens */
 @media (max-width: 1300px) {
  #campusSection .campus-title {
-   width: 95%;                /* Title shrinks gracefully on smaller screens */
+   width: 95%;                
    font-size: 3rem;
  }
 }
 
 
 #quoteSection {
- background-color: #000000; /* Solid black background */
- padding: 120px 20px;       /* Generous vertical spacing */
+ background-color: #000000; 
+ padding: 120px 20px;      
  text-align: center;
- color: #FFFFFF;            /* White text */
+ color: #FFFFFF;            
 }
 
 
 #quoteSection .quote-content {
- max-width: 1000px;         /* Keeps the text from stretching too wide */
+ max-width: 1000px;         
  margin: 0 auto;
 }
 
 
 #quoteSection .quote-text {
- font-family: "Georgia", serif; /* Italicized serif for the quote */
+ font-family: "Georgia", serif; 
  font-style: italic;
  font-size: 2.2rem;
  line-height: 1.6;
@@ -584,11 +566,11 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 
 #quoteSection .quote-author {
- font-family: "Arial", sans-serif; /* Clean sans-serif for the author */
+ font-family: "Arial", sans-serif; 
  font-size: 1rem;
- letter-spacing: 2px;       /* Adds the "Presidential" spaced-out look */
- text-transform: uppercase; /* Matches the all-caps in the image */
- color: #CCCCCC;            /* Slightly muted white for the author */
+ letter-spacing: 2px;      
+ text-transform: uppercase; 
+ color: #CCCCCC;            
 }
 
 
@@ -610,7 +592,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 }
 
 
-/* Image Grid Styling */
 .student-grid {
  display: flex;
  flex-direction: column;
@@ -619,7 +600,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 
 .grid-item {
- background-color: #E0E0E0; /* Fallback color */
+ background-color: #E0E0E0;
  border-radius: 4px;
  overflow: hidden;
  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -653,8 +634,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 .grid-item.small {
  height: 250px;
- flex: 1; /* Makes both small images equal width */
-}
+ flex: 1; }
 
 
 /* Text Styling */
@@ -689,8 +669,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 
 .btn-explore:hover {
- background-color: #821626; /* Darker red for hover */
- color: #ffffff;
+ background-color: #821626; 
 }
 
 
@@ -741,7 +720,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 /* Card Styling */
 .event-card-v2 {
- background-color: #1a1a1a; /* Dark background for the card body */
+ background-color: #1a1a1a; 
  color: #ffffff;
  height: 100%;
  display: flex;
@@ -750,7 +729,7 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 
 .active-card {
- background-color: #333d47; /* Slightly lighter gray for the middle card */
+ background-color: #333d47; 
 }
 
 
@@ -790,8 +769,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  color: #e0e0e0;
 }
 
-
-/* Link and Arrow Styling */
 .event-link-v2 {
  color: #ffffff;
  text-decoration: none;
@@ -828,7 +805,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 }
 
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
  .events-header {
    flex-direction: column;
@@ -840,8 +816,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  }
 }
 
-
-/*NEWS*/
 #mwiNews {
  background-color: #ffffff;
  padding: 100px 0;
@@ -849,10 +823,9 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 }
 
 
-/* 1. MANDATORY SIDE-BY-SIDE FIX */
 .news-flex-wrapper {
  display: flex;
- flex-direction: row; /* Forces side-by-side */
+ flex-direction: row; 
  justify-content: space-between;
  gap: 40px;
  align-items: flex-start;
@@ -860,12 +833,12 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 
 
 .main-news-col {
- flex: 0 0 60%; /* Fixed width for main story */
+ flex: 0 0 60%; 
 }
 
 
 .sidebar-news-col {
- flex: 0 0 35%; /* Fixed width for sidebar list */
+ flex: 0 0 35%;
 }
 
 
@@ -982,26 +955,21 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
 /* --- HOVER EFFECTS --- */
 .featured-news-card:hover .news-img-container img,
 .sidebar-item:hover .sidebar-img img {
- transform: scale(1.1); /* Zoom effect */
+ transform: scale(1.1); 
 }
-
 
 .featured-news-card:hover .featured-news-title {
  text-decoration: underline;
 }
 
-
 .sidebar-item:hover {
  background-color: #f9f9f9;
 }
-
 
 .sidebar-item:hover h4 {
  color: #A51C30;
 }
 
-
-/* Mobile Responsive */
 @media (max-width: 991px) {
  .news-flex-wrapper {
    flex-direction: column;
@@ -1011,7 +979,6 @@ details[open] summary { margin-bottom: 1rem; color: #A41034; }
  }
  .news-img-container { height: 300px; }
 }
-
 
 
 /* Top Bar Styling */
@@ -2053,4 +2020,405 @@ body.scrolled .navbar-toggler {
 
 .footer-bottom a:hover {
   color: #ffffff;
+}
+/* Card Container */
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px 60px;
+}
+
+.form-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* Form Labels and Inputs */
+.form-group label {
+  display: block;
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: Arial, sans-serif;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Action Buttons Alignment */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-update {
+  background-color: #a31f34;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Header Styles */
+.show-header {
+  margin-bottom: 20px;
+}
+
+.staff-name-display {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.staff-dept-display {
+  color: #888;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.show-divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 30px 0;
+}
+
+/* Info Grid Styles */
+.info-row {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.info-label {
+  width: 150px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Status Badge */
+.status-badge {
+  border: 1px solid #28a745;
+  color: #28a745;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Footer Actions */
+.show-footer-actions {
+  margin-top: 50px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-delete-text {
+  background: none;
+  border: 1px solid #ccc; /* Matches Back button style */
+  color: #a31f34;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete-text:hover {
+  background-color: #fff5f5;
+  border-color: #a31f34;
+}
+.edit-container {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+/* Page Header (Above the Card) */
+.page-header {
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+}
+
+.page-header h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.page-header p {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Form Card */
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.form-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-update {
+  background-color: #a31f34; /* Harvard Red */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 24px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+.staff-index-wrapper .n-wrapper {
+  max-width: 95%;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.staff-index-wrapper .index-header-container {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.staff-index-wrapper .staff-index-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.staff-index-wrapper .title-underline {
+  height: 6px;
+  background-color: #A41034;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.staff-index-wrapper .n-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 3rem;
+  width: 100%;
+}
+
+.staff-index-wrapper .n-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staff-index-wrapper .n-table th {
+  background: #f8f9fa;
+  text-align: left;
+  padding: 1.2rem 1rem;
+  border-bottom: 2px solid #000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.staff-index-wrapper .n-table td {
+  padding: 1.8rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+
+.staff-index-wrapper .actions-cell {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.guardian-index-wrapper .n-wrapper {
+  max-width: 95%;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.guardian-index-wrapper .index-header-container {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.guardian-index-wrapper .staff-index-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.guardian-index-wrapper .title-underline {
+  height: 6px;
+  background-color: #A41034;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.guardian-index-wrapper .n-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 3rem;
+  width: 100%;
+}
+
+.guardian-index-wrapper .n-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.guardian-index-wrapper .n-table th {
+  background: #f8f9fa;
+  text-align: left;
+  padding: 1.2rem 1rem;
+  border-bottom: 2px solid #000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.guardian-index-wrapper .n-table td {
+  padding: 1.8rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.guardian-index-wrapper .actions-cell {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.staff-show-wrapper .n-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  border: 1px solid #e0e0e0;
+}
+
+.staff-show-wrapper .show-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.staff-show-wrapper .profile-name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.staff-show-wrapper .profile-subtitle {
+  text-transform: uppercase;
+  color: #777;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.staff-show-wrapper .detail-row {
+  display: flex;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.staff-show-wrapper .detail-label {
+  width: 30%;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.staff-show-wrapper .detail-value {
+  width: 70%;
+  font-weight: 500;
+}
+
+.staff-show-wrapper .student-list-section {
+  margin-top: 3rem;
+}
+
+.staff-show-wrapper .section-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: serif;
+}
+
+.staff-show-wrapper .show-footer-actions {
+  margin-top: 3rem;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.btn-pink-outline {
+  background: white;
+  border: 1px solid #ffcdd2;
+  color: #A41034;
 }
