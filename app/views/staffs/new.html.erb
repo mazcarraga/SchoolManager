@@ -1,15 +1,14 @@
-<% content_for :title, "New Staff" %>
+<% content_for :title, "New Staff Member" %>
 
-<div class="n-wrapper">
+<div class="edit-container">
+  <header class="page-header">
+    <h1>NEW STAFF MEMBER</h1>
+    <p>Personnel Registration</p>
+  </header>
 
-  <div class="neumorphic-card text-center">
-
+  <div class="form-card">
+    <h2 class="form-title">ADDING NEW STAFF</h2>
+    
     <%= render "form", staff: @staff %>
-
-  </div>
-
-
-  <div style="margin-top: 20px;">
-    <%= link_to "← Back to Staffs", staffs_path, class: "btn-n btn-grey" %>
   </div>
 </div>

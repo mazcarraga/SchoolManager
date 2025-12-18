@@ -1,9 +1,9 @@
-<% content_for :title, "Editing student" %>
-<%= render "form", staff: @staff %>
+<% content_for :title, "Edit Staff Member" %>
 
-<div class="n-wrapper">
-  <div class="show-actions mt-0" style="max-width: 1400px; margin: auto;">
-    <%= link_to "← Back to Staffs", staffs_path, class: "btn-n btn-grey" %>
-    <%= link_to "Show this Staff", @staff, class: "btn-n btn-sky" %>
+<div class="edit-container">
+  <div class="form-card">
+    <h1 class="form-title">EDITING STAFF RECORD</h1>
+    
+    <%= render "form", staff: @staff %>
   </div>
 </div>
