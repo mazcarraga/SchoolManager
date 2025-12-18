@@ -1,39 +1,21 @@
-<div class="n-wrapper">
-  <div class="n-card" style="max-width: 700px; margin: auto;">
-    <h2 class="fw-semibold text-dark mb-4">
-      <%= classlist.persisted? ? "Edit Classlist" : "New Classlist" %>
-    </h2>
-
-    <%= form_with(model: classlist, local: true) do |form| %>
-      <% if classlist.errors.any? %>
-        <div class="n-error mb-4">
-          <h5><%= pluralize(classlist.errors.count, "error") %> prevented this classlist from being saved:</h5>
-          <ul>
-            <% classlist.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="mb-3">
-        <%= form.label :student_id, "Student", class: "form-label fw-semibold" %>
-        <%= form.collection_select :student_id, Student.all, :id, :name,
-              { prompt: "Select a Student" },
-              { class: "form-select" } %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :section_id, "Section", class: "form-label fw-semibold" %>
-        <%= form.collection_select :section_id, Section.all, :id, :name,
-              { prompt: "Select a Section" },
-              { class: "form-select" } %>
-      </div>
-
-      <div class="text-end">
-        <%= form.submit classlist.persisted? ? "Update Classlist" : "Create Classlist",
-            class: "btn-n btn-mint" %>
-      </div>
-    <% end %>
+<div class="form-card">
+  <div class="card-header-solid">
+    <h2><%= classlist.new_record? ? "Add Classlist" : "Update Classlist" %></h2>
   </div>
+
+  <%= form_with(model: classlist, local: true) do |form| %>
+    <div class="mb-4">
+      <%= form.label :student_id, class: "label" %>
+      <%= form.collection_select :student_id, Student.all, :id, :name, { prompt: "Select a student" }, class: "form-select" %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :section_id, class: "label" %>
+      <%= form.collection_select :section_id, Section.all, :id, :name, { prompt: "Select a section" }, class: "form-select" %>
+    </div>
+
+    <div class="text-end">
+      <%= form.submit classlist.new_record? ? "Save Classlist" : "Update Classlist", class: "btn-n btn-mint" %>
+    </div>
+  <% end %>
 </div>

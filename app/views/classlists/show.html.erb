@@ -1,23 +1,24 @@
 <div class="n-wrapper">
   <div class="n-card">
-    <div class="n-card-header fw-semibold text-dark">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h2 class="classlist-title">Classlist Details</h2>
-        <%= link_to "Edit Classlist", edit_classlist_path(@classlist), class: "btn-n btn-peach" %>
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <h1 class="mb-2 m-0"><%= Classlist Details %></h1>
       </div>
+      <%= link_to "Edit Details", edit_classlist_path(@classlist), class: "btn-n btn-peach" %> 
+    </div>
 
-      <div class="n-meta text-muted" style="font-size:0.9rem; margin-bottom:12px;">
-        Student: <%= @classlist.student.name %> &nbsp;|&nbsp;
-        Section: <%= @classlist.section.name %>
+    <div class="n-card-body">
+      <div style="display:flex; gap:24px; align-items:flex-start;">
+        <div style="flex:1; solid #ddd; padding-right:12px;">
+          <p style="margin:0 0 12px;"><strong>Student:</strong> ₱<%= @classlist.student.name %></p>
+          <p style="margin:0 0 0;"><strong>Section:</strong> <%= @classlist.section.name %></p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="show-actions" style="display:flex; justify-content:space-between; margin-top:18px;">
+  <div class="d-flex justify-content-between align-items-center mt-4">
     <%= link_to "← Back to Classlists", classlists_path, class: "btn-n btn-grey" %>
-    <%= button_to "Delete Classlist", @classlist,
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete this classlist?" },
-        class: "btn-n btn-pink" %>
+    <%= button_to "Delete Classlist", @classlist, method: :delete, data: { confirm: "Are you sure?" }, class: "btn-n btn-pink" %>
   </div>
 </div>
