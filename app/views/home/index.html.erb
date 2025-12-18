@@ -1,211 +1,400 @@
-<!-- Bootstrap Carousel -->
- <div id="collegeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500">
-  <div class="carousel-indicators">
-   <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-   <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-   <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-   <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-   <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
- </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 
- <div class="carousel-inner">
-   <div class="carousel-item active">
-     <img src="<%= asset_path('c1.png') %>" class="d-block w-100" alt="Campus 1">
-   </div>
-   <div class="carousel-item">
-     <img src="<%= asset_path('c2.png') %>" class="d-block w-100" alt="Campus 2">
-   </div>
-   <div class="carousel-item">
-     <img src="<%= asset_path('c3.png') %>" class="d-block w-100" alt="Campus 3">
-   </div>
-   <div class="carousel-item">
-     <img src="<%= asset_path('c4.png') %>" class="d-block w-100" alt="Campus 4">
-   </div>
-   <div class="carousel-item">
-     <img src="<%= asset_path('c5.png') %>" class="d-block w-100" alt="Campus 5">
-   </div>
- </div>
-
-
- <div class="carousel-overlay-centered text-center">
-   <h1>College of Science, Engineering, and Architecture</h1>
-   <p class="carousel-subtitle">Learn. Build. Lead.</p>
-   <a href="#aboutSection" class="btn btn-light btn-lg mt-3 px-4 py-2 fw-semibold" id="learnMoreBtn">
- Learn More
-</a>
-
-
- </div>
-
-
- <button class="carousel-control-prev" type="button" data-bs-target="#collegeCarousel" data-bs-slide="prev">
-   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Previous</span>
- </button>
- <button class="carousel-control-next" type="button" data-bs-target="#collegeCarousel" data-bs-slide="next">
-   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Next</span>
- </button>
-</div>
-
-
-
-
-<section id="aboutSection" class="container-fluid min-vh-100 d-flex align-items-center" style="background-color: #f8f4ff; scroll-margin-top: 70px;">
- <div class="container px-lg-5">
-    <div class="row align-items-center justify-content-between gx-5">
-
-
-
-
-     <div class="col-lg-6 text-start text-dark">
-    
-       <h1 class="fw-bold mb-4 text-purple">
-         Why Students Choose the College of Science, Engineering, and Architecture
-       </h1>
-       <p class="lead mb-5" style="max-width: 95%;">
-         At the heart of innovation and creativity, the College of Science, Engineering, and Architecture
-         nurtures learners to become leaders, problem-solvers, and visionaries. 
-         We provide a learning environment that connects science, technology, and design — turning ideas
-         into impactful realities that uplift society.
-       </p>
-
-
-       <div class="d-flex gap-5 mt-4">
-         <div class="text-center">
-           <i class="bi bi-people-fill fs-3 text-purple mb-1"></i>
-           <h4 class="fw-bold mb-0 text-purple">1k+</h4>
-           <p class="small text-muted">Active Students</p>
-         </div>
-         <div class="text-center">
-           <i class="bi bi-award-fill fs-3 text-purple mb-1"></i>
-           <h4 class="fw-bold mb-0 text-purple">10yrs</h4>
-           <p class="small text-muted">Academic Excellence</p>
-         </div>
-         <div class="text-center">
-           <i class="bi bi-journal-bookmark-fill fs-3 text-purple mb-1"></i>
-           <h4 class="fw-bold mb-0 text-purple">6</h4>
-           <p class="small text-muted">Programs Offered</p>
-         </div>
-       </div>
-     </div>
-
-
-
-
-     <div class="col-lg-5 mt-5 mt-lg-0">
-       <!-- Vision Box -->
-       <div class="p-4 mb-4 rounded-4 shadow-lg border border-2 border-indigo bg-white bg-opacity-75 backdrop-blur-sm">
-         <h3 class="fw-bold text-purple mb-2">Our Vision</h3>
-         <p class="text-dark mb-0">
-           To be a center of excellence that empowers future scientists, engineers, and architects
-           to create sustainable, inclusive, and transformative innovations for the betterment of society.
-         </p>
-       </div>
-
-
-       <div class="p-4 rounded-4 shadow-lg border border-2 border-indigo bg-white bg-opacity-75 backdrop-blur-sm">
-         <h3 class="fw-bold text-purple mb-2">Our Mission</h3>
-         <p class="text-dark mb-0">
-           We are committed to providing quality education grounded in research, creativity, and ethics —
-           equipping learners with the skills and values to design, build, and serve communities with purpose.
-         </p>
-       </div>
-     </div>
-
-
-   </div>
- </div>
-</section>
-
-
-<section id="departments" class="departments-section" 
-         style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= asset_path("bg1.png") %>') center/cover no-repeat;
-                min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0; color: white;">
- <div class="container">
-
-
-   <h2 class="departments-header mb-3">
-     DEPARTMENTS
-   </h2>
-
-
-   <p class="departments-subtext mb-5">
-     Discover the diverse programs under the College of Science, Engineering, and Architecture —
-     where innovation meets excellence.
+<!-- Hero Section -->
+<section id="heroSection" class="position-relative text-center d-flex align-items-center"
+        style="min-height: 100vh; background: url('<%= asset_path("VC.png") %>') center/cover no-repeat;">
+ <!-- Hero content -->
+ <div class="container position-relative z-2 text-dark">
+   <h1 class="hero-title fw-bold mb-3">
+     Learn. Build. Lead.
+   </h1>
+   <p class="hero-subtitle lead mb-4">
+     Empowering students to innovate and succeed
    </p>
+   <a href="#whySection" class="btn hero-btn">
+     Learn More
+   </a>
+ </div>
+</section>
 
 
-   <div class="row g-4 justify-content-center">
 
 
+<!-- About Section -->
+<section id="whySection" class="position-relative text-dark">
+ <div class="container py-5">
+   <!-- Title aligned to left, underline will match reason width -->
+   <h2 class="why-title">Why Students Choose MWI</h2>
+
+
+
+
+   <div class="row justify-content-center g-5">
+     <!-- Reason 1 -->
+     <div class="col-md-3 text-center reason">
+       <div class="icon-wrapper">
+         <i class="bi bi-mortarboard"></i>
+       </div>
+       <h5>World-Class Faculty</h5>
+       <p>Distinguished scholars committed to academic excellence</p>
+     </div>
+
+
+     <!-- Reason 2 -->
+     <div class="col-md-3 text-center reason">
+       <div class="icon-wrapper">
+         <i class="bi bi-book"></i>
+       </div>
+       <h5>Cutting-Edge Research</h5>
+       <p>State-of-the-art facilities and groundbreaking opportunities</p>
+     </div>
+
+
+     <!-- Reason 3 -->
+     <div class="col-md-3 text-center reason">
+       <div class="icon-wrapper">
+         <i class="bi bi-globe"></i>
+       </div>
+       <h5>Global Network</h5>
+       <p>International community spanning every continent</p>
+     </div>
+   </div>
+ </div>
+</section>
+
+
+<!-- By the Numbers Section -->
+<section id="numbersSection">
+ <div class="container">
+   <div class="numbers-header-v2">
+     <h2 class="numbers-main-title">MWI in Numbers</h2>
+     <p style="max-width: 400px; font-size: 0.95rem; line-height: 1.4;">
+       Our impact is measured through the success of our students and the reach of our global research initiatives.
+     </p>
+   </div>
+
+
+   <div class="row g-4">
+     <div class="col-md-4">
+       <div class="number-card">
+         <h3>12,000+</h3>
+         <p>Students Enrolled</p>
+       </div>
+     </div>
+     <div class="col-md-4">
+       <div class="number-card">
+         <h3>98%</h3>
+         <p>Employment Rate</p>
+       </div>
+     </div>
+     <div class="col-md-4">
+       <div class="number-card">
+         <h3>75+</h3>
+         <p>Countries Represented</p>
+       </div>
+     </div>
+   </div>
+  
+   <div class="row g-4 mt-4">
+     <div class="col-md-6">
+       <div class="number-card">
+         <h3>$420M</h3>
+         <p>Annual Research Funding</p>
+       </div>
+     </div>
+     <div class="col-md-6">
+       <div class="number-card">
+         <h3>15:1</h3>
+         <p>Student-Faculty Ratio</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+
+
+<!-- Academic Departments Section -->
+<section id="academicDepartments">
+ <div class="container">
+   <div class="dept-header-v2">
+     <h2 class="dept-main-title">Academic Departments</h2>
+     <p class="dept-sub-text">Explore our diverse colleges and the specialized degree programs designed to prepare students for global leadership.</p>
+   </div>
+
+
+   <div class="dept-flex-wrapper">
+     <div class="dept-list-col">
+       <ul class="college-list">
+        
+         <li class="college-item" onclick="togglePrograms(this)">
+           <span class="college-name">College of Humanities and Social Sciences</span>
+           <div class="program-grid-container">
+             <ul class="program-grid-list">
+               <li>Bachelor of Arts in English Literature</li>
+               <li>Bachelor of Arts in Creative Writing</li>
+               <li>Bachelor of Arts in History</li>
+               <li>Bachelor of Arts in Philosophy</li>
+               <li>Bachelor of Arts in Psychology</li>
+               <li>Bachelor of Arts in Sociology</li>
+               <li>Bachelor of Arts in Political Science</li>
+               <li>Bachelor of Arts in Anthropology</li>
+               <li>Bachelor of Arts in Linguistics</li>
+               <li>Bachelor of Arts in International Relations</li>
+             </ul>
+           </div>
+         </li>
+
+
+         <li class="college-item" onclick="togglePrograms(this)">
+           <span class="college-name">College of Business and Accountancy</span>
+           <div class="program-grid-container">
+             <ul class="program-grid-list">
+               <li>B.S. Accountancy</li>
+               <li>B.S. Management Accounting</li>
+               <li>B.S. Business Administration</li>
+               <li>B.S. Marketing Management</li>
+               <li>B.S. Financial Management</li>
+               <li>B.S. Entrepreneurship</li>
+             </ul>
+           </div>
+         </li>
+
+
+         <li class="college-item" onclick="togglePrograms(this)">
+           <span class="college-name">College of Computer Studies</span>
+           <div class="program-grid-container">
+             <ul class="program-grid-list">
+               <li>B.S. Computer Science</li>
+               <li>B.S. Information Technology</li>
+               <li>B.S. Data Science & Analytics</li>
+               <li>B.S. Information Systems</li>
+             </ul>
+           </div>
+         </li>
+
+
+         <li class="college-item" onclick="togglePrograms(this)">
+           <span class="college-name">College of Education</span>
+           <div class="program-grid-container">
+             <ul class="program-grid-list">
+               <li>B.S. Elementary Education</li>
+               <li>B.S. Secondary Education</li>
+               <li>B.S. Early Childhood Education</li>
+               <li>B.S. Special Needs Education</li>
+             </ul>
+           </div>
+         </li>
+
+
+         <li class="college-item" onclick="togglePrograms(this)">
+           <span class="college-name">College of Science, Engineering, and Architecture</span>
+           <div class="program-grid-container">
+             <ul class="program-grid-list">
+               <li>B.S. Civil Engineering</li>
+               <li>B.S. Mechanical Engineering</li>
+               <li>B.S. Electrical Engineering</li>
+               <li>B.S. Architecture</li>
+               <li>B.S. Biology</li>
+               <li>B.S. Chemistry</li>
+             </ul>
+           </div>
+         </li>
+
+
+         <li class="college-item" onclick="togglePrograms(this)">
+           <span class="college-name">College of Nursing</span>
+           <div class="program-grid-container">
+             <ul class="program-grid-list">
+               <li>Bachelor of Science in Nursing</li>
+               <li>M.S. in Nursing Leadership</li>
+             </ul>
+           </div>
+         </li>
+
+
+       </ul>
+     </div>
+
+
+     <div class="dept-carousel-col">
+       <div id="deptCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false" data-bs-touch="false">
+         <div class="carousel-inner">
+           <div class="carousel-item active">
+             <img src="<%= asset_path('c1.png') %>" class="d-block w-100" alt="Academic Excellence">
+           </div>
+           <div class="carousel-item">
+             <img src="<%= asset_path('ece_cpe.jpg') %>" class="d-block w-100" alt="Innovation Lab">
+           </div>
+           <div class="carousel-item">
+             <img src="<%= asset_path('natsci.jpg') %>" class="d-block w-100" alt="Scientific Research">
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+<!-- Campus Section -->
+<section id="campusSection">
+ <div class="container">
+   <h2 class="campus-title">Our Historic Campus</h2>
+
+
+   <div class="row g-4 justify-content-center" style="max-width: 1250px; margin: 0 auto;">
     
-   <div class="col-12 col-md-6">
-     <div class="dept-card-glass">
-       <img src="<%= asset_path('d1.png') %>" class="dept-card-img" alt="ECE & CPE">
-       <div class="dept-card-content">
-         <h4>Electronics & Computer Engineering</h4>
-         <p>Innovating systems, devices, and intelligent technologies.</p>
-         <strong>Programs Offered:</strong>
-         <ul class="programs-offered">
-           <li> BS Computer Engineering</li>
-           <li> BS Electronics Engineering</li>
-         </ul>
-       <button class="explore-btn">Explore now →</button>
-       </div>
+     <div class="col-md-4">
+     <div class="campus-card">
+     <img src="<%= asset_path('c1.png') %>"
+        alt="Historic Campus View"
+        class="img-fluid">
      </div>
    </div>
 
 
-
-
-   <div class="col-12 col-md-6">
-     <div class="dept-card-glass">
-       <img src="<%= asset_path('d2.png') %>" class="dept-card-img" alt="CE & Architecture">
-       <div class="dept-card-content">
-         <h4>Civil Engineering & Architecture</h4>
-         <p>Building structures, communities, and sustainable environments.</p>
-         <strong>Programs Offered:</strong>
-         <ul class="programs-offered">
-           <li> BS Civil Engineering</li>
-           <li> BS Architecture</li>
-         </ul>
-         <button class="explore-btn">Explore now →</button>
-       </div>
+   <div class="col-md-4">
+      <div class="campus-card">
+       <img src="<%= asset_path('ece_cpe.jpg') %>"
+        alt="Campus Building View"
+        class="img-fluid">
      </div>
    </div>
 
 
-   <div class="col-12 col-md-6">
-     <div class="dept-card-glass">
-       <img src="<%= asset_path('d3.png') %>" class="dept-card-img" alt="Natural Sciences">
-       <div class="dept-card-content">
-         <h4>Natural Sciences</h4>
-         <p>Exploring life, matter, and the natural world through research.</p>
-         <strong>Programs Offered:</strong>
-         <ul class="programs-offered">
-           <li> BS Biology</li>
-         </ul>
-         <button class="explore-btn">Explore now →</button>
+   <div class="col-md-4">
+     <div class="campus-card">
+       <img src="<%= asset_path('natsci.jpg') %>"
+           alt="Natural Sciences Department"
+           class="img-fluid">
+     </div>
+   </div>
+   <div class="campus-description">
+     <p>
+       MWI University is 200-acre campus blends historic architecture with modern facilities,
+       creating an inspiring environment for academic pursuit. Our tree-lined quadrangles,
+       state-of-the-art laboratories, and renowned libraries provide the perfect setting
+       for scholarly excellence.
+     </p>
+   </div>
+ </div>
+</section>
+
+
+<!-- Quote -->
+<section id="quoteSection">
+ <div class="container">
+   <div class="quote-content">
+     <p class="quote-text">
+       "The function of education is to teach one to think intensively and to think critically. Intelligence plus character—that is the goal of true education."
+     </p>
+     <p class="quote-author">
+       — DR. MAWIVAN ABIUS, FOUNDING PRESIDENT
+     </p>
+   </div>
+ </div>
+</section>
+
+
+<!-- STUNDET LIFE -->
+<section id="studentLife">
+ <div class="container">
+   <div class="row align-items-center">
+    
+     <div class="col-lg-6">
+       <div class="student-grid">
+         <div class="grid-item large">
+           <img src="<%= asset_path('c3.png') %>" alt="Student Life">
+         </div>
+         <div class="grid-sub-row">
+           <div class="grid-item small">
+             <img src="<%= asset_path('c4.png') %>" alt="Athletics">
+           </div>
+           <div class="grid-item small">
+             <img src="<%= asset_path('C7.png') %>" alt="Arts and Culture">
+           </div>
+         </div>
        </div>
      </div>
+
+
+     <div class="col-lg-6 ps-lg-5">
+       <h2 class="student-life-title">Student Life</h2>
+       <p class="student-life-desc">
+         Experience a vibrant campus community with 15 varsity sports, over 400
+         student organizations, and endless opportunities for growth. From
+         athletics to arts, from leadership to service, MWI offers a transformative
+         college experience that extends far beyond the classroom.
+       </p>
+       <a href="#" class="btn-explore">EXPLORE NOW</a>
+     </div>
+
+
+   </div>
+ </div>
+</section>
+
+
+<!-- Events Section -->
+<section id="eventsSection">
+ <div class="container">
+   <div class="events-header">
+     <h2 class="events-main-title">Upcoming Events</h2>
+     <p class="events-sub-text">
+       Join us for a season of celebration, professional growth, and artistic expression across the MWI campus.
+     </p>
    </div>
 
 
+   <div class="row g-4">
+     <div class="col-md-4">
+       <div class="event-card-v2">
+         <div class="event-img-wrapper">
+           <img src="<%= asset_path('news1.png') %>" alt="MWI Homecoming">
+         </div>
+         <div class="event-content-v2">
+           <h3 class="event-title-v2">Annual Alumni Homecoming</h3>
+           <p class="event-desc-v2">
+             Welcome back, Pioneers! Join us for a weekend of reunions, the traditional parade, and the big game at the central stadium.
+           </p>
+           <a href="#" class="event-link-v2">
+             <span class="arrow-circle">→</span> View Schedule
+           </a>
+         </div>
+       </div>
+     </div>
 
 
-     <div class="col-12 col-md-6">
-       <div class="dept-card-glass">
-         <img src="<%= asset_path('d4.png') %>" class="dept-card-img" alt="Mathematics">
-         <div class="dept-card-content">
-           <h4>Mathematics</h4>
-           <p>Strengthening logical reasoning, analysis, and modern computation.</p>
-           <strong>Programs Offered:</strong>
-           <ul class="programs-offered">
-             <li> BS Mathematics</li>
-           </ul>
-           <button class="explore-btn">Explore now →</button>
+     <div class="col-md-4">
+       <div class="event-card-v2 active-card">
+         <div class="event-img-wrapper">
+           <img src="<%= asset_path('news2.png') %>" alt="Engineering Career Fair">
+         </div>
+         <div class="event-content-v2">
+           <h3 class="event-title-v2">2025 Tech & Career Expo</h3>
+           <p class="event-desc-v2">
+             Connect with over 150 global recruiters. This event is exclusive to MWI students and alumni looking for internships and roles.
+           </p>
+           <a href="#" class="event-link-v2">
+             <span class="arrow-circle white">→</span> Register Now
+           </a>
+         </div>
+       </div>
+     </div>
+
+
+     <div class="col-md-4">
+       <div class="event-card-v2">
+         <div class="event-img-wrapper">
+           <img src="<%= asset_path('news3.png') %>" alt="Arts Festival">
+         </div>
+         <div class="event-content-v2">
+           <h3 class="event-title-v2">Spring Harmony Festival</h3>
+           <p class="event-desc-v2">
+             A celebration of the arts featuring live outdoor performances, student gallery showcases, and local food vendors.
+           </p>
+           <a href="#" class="event-link-v2">
+             <span class="arrow-circle">→</span> Get Tickets
+           </a>
          </div>
        </div>
      </div>
@@ -214,226 +403,139 @@
 </section>
 
 
-
-
-<section id="newsEvents" class="news-events-section py-5">
+<!-- News Section -->
+<section id="mwiNews">
  <div class="container">
-   <!-- Header with category buttons -->
-   <div class="d-flex justify-content-between align-items-center mb-4">
-   <h2 class="news-header mb-4"></span>NEWS & EVENTS</h2>
-     <div>
-       <button id="newsBtn" class="category-btn me-2 active">News</button>
-       <button id="eventsBtn" class="category-btn">Events</button>
+   <div class="news-header-top">
+     <div class="header-left">
+       <h2 class="news-main-title">Campus News</h2>
+     </div>
+     <div class="header-right">
+       <p>Stay updated with the latest headlines, academic achievements, and community highlights from across MWI University.</p>
      </div>
    </div>
 
 
-
-
-<div class="row g-4 news-row">
- <div class="col-12 col-md-6 col-lg-4 news-card category-news">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news1.png') %>" class="event-img w-100" alt="Science Expo 2025">
-     <div class="p-3">
-       <span class="badge bg-primary mb-1">News</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Science Expo 2025
-       </span>
-       <p class="event-desc mt-2">Explore cutting-edge student projects in electronics, architecture, and natural sciences.</p>
-       <p class="event-date">Thu, Nov 20, 2025</p>
+   <div class="news-flex-wrapper">
+    
+     <div class="main-news-col">
+       <div class="featured-news-card">
+         <div class="news-img-container">
+           <img src="<%= asset_path('c1.png') %>" alt="University Expansion">
+         </div>
+         <div class="news-meta">INFRASTRUCTURE</div>
+         <h3 class="featured-news-title">MWI Breaks Ground on State-of-the-Art Innovation Center</h3>
+         <p class="news-summary">
+           The new 50,000-square-foot facility will serve as a hub for interdisciplinary
+           research, featuring advanced robotics labs and collaborative workspaces
+           for students and faculty.
+         </p>
+         <a href="#" class="news-arrow-link">
+           Learn more about the project <span class="arrow">→</span>
+         </a>
+       </div>
      </div>
-   </div>
- </div>
 
 
- <div class="col-12 col-md-6 col-lg-4 news-card category-news">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news8.png') %>" class="event-img w-100" alt="BS Computer Engineering Certified for Cisco">
-     <div class="p-3">
-       <span class="badge bg-primary mb-1">News</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         BS Computer Engineering Certified for Cisco
-       </span>
-       <p class="event-desc mt-2">The Computer Engineering program earns Cisco certification, elevating industry standards.</p>
-       <p class="event-date">Wed, Nov 19, 2025</p>
+     <div class="sidebar-news-col">
+       <div class="news-sidebar">
+        
+         <div class="sidebar-item">
+           <div class="sidebar-text">
+             <span class="sidebar-tag">ACHIEVEMENT</span>
+             <h4>MWI Debate Team secures first place in National Finals</h4>
+           </div>
+           <div class="sidebar-img">
+             <img src="<%= asset_path('VC.png') %>" alt="Debate Team">
+           </div>
+         </div>
+
+
+         <div class="sidebar-item">
+           <div class="sidebar-text">
+             <span class="sidebar-tag">RESEARCH</span>
+             <h4>Biology department discovers resilient plant species</h4>
+           </div>
+           <div class="sidebar-img">
+             <img src="<%= asset_path('natsci.jpg') %>" alt="Biology Research">
+           </div>
+         </div>
+
+
+         <div class="sidebar-item">
+           <div class="sidebar-text">
+             <span class="sidebar-tag">ENGINEERING</span>
+             <h4>Students develop low-cost water filtration system</h4>
+           </div>
+           <div class="sidebar-img">
+             <img src="<%= asset_path('ece_cpe.jpg') %>" alt="Engineering Project">
+           </div>
+         </div>
+
+
+         <div class="sidebar-item">
+           <div class="sidebar-text">
+             <span class="sidebar-tag">ARTS</span>
+             <h4>New gallery opening showcases alumni photography</h4>
+           </div>
+           <div class="sidebar-img">
+             <img src="<%= asset_path('C7.png') %>" alt="Art Gallery">
+           </div>
+         </div>
+
+
+       </div>
      </div>
-   </div>
- </div>
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card category-news">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news7.png') %>" class="event-img w-100" alt="International Competition Winner">
-     <div class="p-3">
-       <span class="badge bg-primary mb-1">News</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Winning an International Competition
-       </span>
-       <p class="event-desc mt-2">College of Science, Engineering and Architecture students triumph at global competition.</p>
-       <p class="event-date">Tue, Nov 18, 2025</p>
-     </div>
-   </div>
- </div>
-
-
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card category-events d-none">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news9.png') %>" class="event-img w-100" alt="Cybersecurity Seminar">
-     <div class="p-3">
-       <span class="badge bg-warning mb-1">Seminar</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Cybersecurity Seminar 2025
-       </span>
-       <p class="event-desc mt-2">Experts discuss best practices in cybersecurity for students and professionals.</p>
-       <p class="event-date">Mon, Nov 17, 2025</p>
-     </div>
-   </div>
- </div>
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card category-events d-none">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news5.png') %>" class="event-img w-100" alt="Computer Engineering Hackathon">
-     <div class="p-3">
-       <span class="badge bg-info mb-1">Competition</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Computer Engineering Hackathon
-       </span>
-       <p class="event-desc mt-2">A 24-hour coding competition for students to develop real-world apps.</p>
-       <p class="event-date">Sun, Nov 16, 2025</p>
-     </div>
-   </div>
- </div>
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card category-events d-none">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news6.png') %>" class="event-img w-100" alt="Sustainability in Engineering Workshop">
-     <div class="p-3">
-       <span class="badge bg-success mb-1">Workshop</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Sustainability in Engineering Workshop
-       </span>
-       <p class="event-desc mt-2">Hands-on workshop discussing sustainable practices in construction and design.</p>
-       <p class="event-date">Fri, Nov 15, 2025</p>
-     </div>
-   </div>
- </div>
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card extra-news category-events d-none">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news2.png') %>" class="event-img w-100" alt="Engineering Leadership Summit">
-     <div class="p-3">
-       <span class="badge bg-warning mb-1">Seminar</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Engineering Leadership Summit
-       </span>
-       <p class="event-desc mt-2">Join top industry professionals and students to discuss innovation in engineering.</p>
-       <p class="event-date">Wed, Nov 19, 2025</p>
-     </div>
-   </div>
- </div>
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card extra-news category-events d-none">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news3.png') %>" class="event-img w-100" alt="Architecture Design Competition">
-     <div class="p-3">
-       <span class="badge bg-info mb-1">Competition</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Architecture Design Competition
-       </span>
-       <p class="event-desc mt-2">Students showcase their innovative building designs and sustainable concepts.</p>
-       <p class="event-date">Tue, Nov 18, 2025</p>
-     </div>
-   </div>
- </div>
-
-
- <div class="col-12 col-md-6 col-lg-4 news-card extra-news category-events d-none">
-   <div class="event-card rounded-4 overflow-hidden shadow-sm">
-     <img src="<%= asset_path('news4.png') %>" class="event-img w-100" alt="Mathematics & Science Symposium">
-     <div class="p-3">
-       <span class="badge bg-warning mb-1">Seminar</span>
-       <span class="event-title" style="cursor: pointer; color: #2e1a63; text-decoration: underline;">
-         Mathematics & Science Symposium
-       </span>
-       <p class="event-desc mt-2">Attend seminars, workshops, and research presentations in the natural sciences.</p>
-       <p class="event-date">Mon, Nov 17, 2025</p>
-     </div>
-   </div>
- </div>
-</div>
-
-
-   <div class="text-end mt-3">
-     <a href="#" id="moreBtn" class="more-link">More</a>
-   </div>
- </div>
+   </div> </div>
 </section>
+
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
- const newsBtn = document.getElementById('newsBtn');
- const eventsBtn = document.getElementById('eventsBtn');
- const moreBtn = document.getElementById('moreBtn');
+const sections = document.querySelectorAll('.page-section');
 
 
- const newsCards = document.querySelectorAll('.category-news');
- const eventsCards = document.querySelectorAll('.category-events');
+window.addEventListener('scroll', () => {
+ const scrollTop = window.scrollY;
+ const windowHeight = window.innerHeight;
 
 
- let currentCategory = 'news';
+ sections.forEach(section => {
+   const sectionTop = section.offsetTop;
+   const sectionHeight = section.offsetHeight;
 
 
- function showCategory(category) {
-   currentCategory = category;
+   // Calculate visibility ratio (0 = not visible, 1 = fully visible)
+   let ratio = (scrollTop + windowHeight - sectionTop) / sectionHeight;
+   ratio = Math.max(0, Math.min(1, ratio)); // clamp between 0-1
 
 
-   if(category === 'news') {
-     newsCards.forEach((c,i) => c.classList.toggle('d-none', i >= 3));
-     eventsCards.forEach(c => c.classList.add('d-none'));
-     newsBtn.classList.add('active');
-     eventsBtn.classList.remove('active');
-   } else {
-     eventsCards.forEach((c,i) => c.classList.toggle('d-none', i >= 3));
-     newsCards.forEach(c => c.classList.add('d-none'));
-     eventsBtn.classList.add('active');
-     newsBtn.classList.remove('active');
-   }
+   // Apply fade and subtle upward movement
+   section.style.opacity = ratio;
+   section.style.transform = `translateY(${(1 - ratio) * 50}px)`;
+ });
+});
+function togglePrograms(element) {
+ const grid = element.querySelector('.program-grid-container');
+ const isAlreadyOpen = grid.style.display === "block";
+
+
+ // Close all other colleges first
+ document.querySelectorAll('.program-grid-container').forEach(container => {
+   container.style.display = "none";
+ });
+ document.querySelectorAll('.college-item').forEach(item => {
+   item.classList.remove('active');
+ });
+
+
+ // Toggle the clicked one
+ if (!isAlreadyOpen) {
+   grid.style.display = "block";
+   element.classList.add('active');
  }
-
-
- function showMore(e) {
-   e.preventDefault();
-   if(currentCategory === 'news') {
-     newsCards.forEach(c => c.classList.remove('d-none'));
-   } else {
-     eventsCards.forEach(c => c.classList.remove('d-none'));
-   }
- }
-
-
- newsBtn.addEventListener('click', () => showCategory('news'));
- eventsBtn.addEventListener('click', () => showCategory('events'));
- moreBtn.addEventListener('click', showMore);
-
- const learnMoreBtn = document.getElementById('learnMoreBtn');
- if (learnMoreBtn) {
-   learnMoreBtn.addEventListener('click', function(e) {
-     e.preventDefault();
-     document.getElementById('aboutSection').scrollIntoView({ behavior: 'smooth' });
-   });
- }
-
- showCategory('news');
+}
+// Optional: fade in on page load
+window.addEventListener('load', () => {
+ document.body.classList.remove('fade-in');
 });
 </script>
-
-
-<!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-

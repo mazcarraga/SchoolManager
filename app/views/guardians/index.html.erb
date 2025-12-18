@@ -1,55 +1,45 @@
-<h1 class="text-center bi bi-people-fill"> GUARDIANS </h1>
-
-<div class="n-wrapper">
-  <div class="n-card">
-    <div class="text-end mb-3">
-      <%= link_to " New Guardian", new_guardian_path, class: "bi bi-person-add btn-n btn-mint btn-new" %>
+<div class="guardian-index-wrapper">
+  <div class="n-wrapper">
+    <div class="index-header-container">
+      <h1 class="staff-index-title">GUARDIANS</h1>
+      <div class="title-underline"></div>
     </div>
 
-    <style>
-      .actions-cell {
-        display: flex;
-        gap: 8px; 
-        justify-content: center; 
-        align-items: center;
-      }
+    <div class="n-card">
+      <div class="d-flex justify-content-end mb-4">
+        <%= link_to " New Guardian", new_guardian_path, class: "bi bi-person-add btn-n btn-mint" %>
+      </div>
 
-      .actions-cell .btn-n {
-        margin: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
-
-    <table class="n-table">
-      <thead>
-        <tr>
-          <th>NAME</th>
-          <th>EMAIL</th>
-          <th>CONTACT NUMBER</th>
-          <th>NUMBER OF STUDENTS</th>
-          <th>ACTIONS</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @guardians.each do |guardian| %>
+      <table class="n-table">
+        <thead>
           <tr>
-            <td><%= guardian.name %></td>
-            <td><%= guardian.email_address %></td>
-            <td><%= guardian.contact_number %></td>
-            <td><%= guardian.number_of_students %></td>
-
-            <td class="actions-cell">
-              <%= link_to "Show", guardian, class: "btn-n btn-sky" %>
-              <%= link_to "Edit", edit_guardian_path(guardian), class: "btn-n btn-peach" %>
-              <%= link_to "Delete", guardian, class: "btn-n btn-pink", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-            </td>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>CONTACT NUMBER</th>
+            <th>STUDENTS</th>
+            <th>ACTIONS</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <% @guardians.each do |guardian| %>
+            <tr>
+              <td class="fw-bold"><%= guardian.name %></td>
+              <td><%= guardian.email_address %></td>
+              <td><%= guardian.contact_number %></td>
+              <td><%= guardian.number_of_students %></td>
+
+              <td>
+                <div class="actions-cell">
+                  <%= link_to "Show", guardian, class: "btn-n btn-sky" %>
+                  <%= link_to "Edit", edit_guardian_path(guardian), class: "btn-n btn-peach" %>
+                  <%= link_to "Delete", guardian, class: "btn-n btn-pink", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
