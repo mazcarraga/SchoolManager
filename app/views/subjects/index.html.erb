@@ -1,10 +1,8 @@
-<h1 class="text-center bi bi-journal-bookmark-fill"> SUBJECTS</h1>
-
 <div class="n-wrapper">
-  <div class="n-card">
-    <div class="text-end mb-3">
-      <%= link_to "\tNew Subject", new_subject_path, class: "bi bi-plus-circle btn-n btn-mint btn-new" %>
-    </div>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="card-header-solid m-0">SUBJECTS</h1>
+    <%= link_to "New Subject", new_subject_path, class: "btn-n btn-mint" %>
+  </div>
 
     <table class="n-table">
       <thead>
@@ -19,13 +17,18 @@
       <tbody>
         <% @subjects.each do |subject| %>
           <tr>
-            <td><%= subject.name %></td>
-            <td><%= subject.teacher.name %></td>
+            <td><strong><%= subject.name %></td>
+            <td class="text-center">
+              <%= subject.teacher.name %></td>
             <td><%= subject.number_of_units %></td>
-            <td class="actions-cell">
-              <%= link_to "Show", subject, class: "btn-n btn-sky" %>
-              <%= link_to "Edit", edit_subject_path(subject), class: "btn-n btn-peach" %>
-              <%= link_to "Delete", subject, class: "btn-n btn-pink" %>
+            <td class="d-flex gap-2 justify-content-center">
+              <%= link_to "View", subject, class: "btn-n btn-sky", onclick: "event.stopPropagation();" %>
+              <%= link_to "Edit", edit_subject_path(subject), class: "btn-n btn-peach", onclick: "event.stopPropagation();" %>
+              <%= button_to "Delete", subject,
+                    method: :delete,
+                    form: { onsubmit: "event.stopPropagation();" },
+                    data: { confirm: "Are you sure?" },
+                    class: "btn-n btn-pink" %>
             </td>
           </tr>
         <% end %>
@@ -33,4 +36,3 @@
     </table>
   </div>
 </div>
-
