@@ -1,10 +1,8 @@
-<h1 class="text-center bi bi-collection-fill"> SECTIONS</h1>
-
 <div class="n-wrapper">
-  <div class="n-card">
-    <div class="text-end mb-3">
-      <%= link_to "\tNew Section", new_section_path, class: "bi bi-plus-circle btn-n btn-mint btn-new" %>
-    </div>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="card-header-solid m-0">SECTIONS</h1>
+    <%= link_to "New Section", new_section_path, class: "btn-n btn-mint" %>
+  </div>
 
     <table class="n-table">
       <thead>
@@ -21,15 +19,20 @@
       <tbody>
         <% @sections.each do |section| %>
           <tr>
-            <td><%= section.name %></td>
-            <td><%= section.room %></td>
+            <td><strong><%= section.name %></td>
+            <td class="text-center">
+              <%= section.room %></td>
             <td><%= section.time_slot %></td>
             <td><%= section.subject.name %></td>
             <td><%= section.number_of_students %></td>
-            <td class="actions-cell">
-              <%= link_to "Show", section, class: "btn-n btn-sky" %>
-              <%= link_to "Edit", edit_section_path(section), class: "btn-n btn-peach" %>
-              <%= link_to "Delete", section, class: "btn-n btn-pink" %>
+            <td class="d-flex gap-2 justify-content-center">
+              <%= link_to "View", section, class: "btn-n btn-sky", onclick: "event.stopPropagation();" %>
+              <%= link_to "Edit", edit_section_path(section), class: "btn-n btn-peach", onclick: "event.stopPropagation();" %>
+              <%= button_to "Delete", section,
+                    method: :delete,
+                    form: { onsubmit: "event.stopPropagation();" },
+                    data: { confirm: "Are you sure?" },
+                    class: "btn-n btn-pink" %>
             </td>
           </tr>
         <% end %>
